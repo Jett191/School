@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xscj.kcpj.mapper.KcpjMapper">
+
+    <resultMap type="Kcpj" id="KcpjResult">
+        <result property="kcpjId"    column="kcpj_id"    />
+        <result property="kcName"    column="kc_name"    />
+        <result property="kcPf"    column="kc_pf"    />
+        <result property="kcFk"    column="kc_fk"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="userId"    column="user_id"    />
+        <result property="deptId"    column="dept_id"    />
+    </resultMap>
+
+    <sql id="selectKcpjVo">
+        select kcpj_id, kc_name, kc_pf, kc_fk, create_by, create_time, update_by, update_time, user_id, dept_id from xscj_kcpj
+    </sql>
+
+    <select id="selectKcpjList" parameterType="Kcpj" resultMap="KcpjResult">
+        <include refid="selectKcpjVo"/>
+        <where>
+            <if test="kcName != null  and kcName != ''"> and kc_name like concat('%', #{kcName}, '%')</if>
+            <if test="createBy != null  and createBy != ''"> and create_by like concat('%', #{createBy}, '%')</if>
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="deptId != null "> and dept_id = #{deptId}</if>
+        </where>
+    </select>
+
+    <select id="selectKcpjByKcpjId" parameterType="String" resultMap="KcpjResult">
+        <include refid="selectKcpjVo"/>
+        where kcpj_id = #{kcpjId}
+    </select>
+
+    <insert id="insertKcpj" parameterType="Kcpj">
+        insert into xscj_kcpj
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="kcpjId != null">kcpj_id,</if>
+            <if test="kcName != null and kcName != ''">kc_name,</if>
+            <if test="kcPf != null">kc_pf,</if>
+            <if test="kcFk != null and kcFk != ''">kc_fk,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="deptId != null">dept_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="kcpjId != null">#{kcpjId},</if>
+            <if test="kcName != null and kcName != ''">#{kcName},</if>
+            <if test="kcPf != null">#{kcPf},</if>
+            <if test="kcFk != null and kcFk != ''">#{kcFk},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="deptId != null">#{deptId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKcpj" parameterType="Kcpj">
+        update xscj_kcpj
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="kcName != null and kcName != ''">kc_name = #{kcName},</if>
+            <if test="kcPf != null">kc_pf = #{kcPf},</if>
+            <if test="kcFk != null and kcFk != ''">kc_fk = #{kcFk},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+        </trim>
+        where kcpj_id = #{kcpjId}
+    </update>
+
+    <delete id="deleteKcpjByKcpjId" parameterType="String">
+        delete from xscj_kcpj where kcpj_id = #{kcpjId}
+    </delete>
+
+    <delete id="deleteKcpjByKcpjIds" parameterType="String">
+        delete from xscj_kcpj where kcpj_id in
+        <foreach item="kcpjId" collection="array" open="(" separator="," close=")">
+            #{kcpjId}
+        </foreach>
+    </delete>
+</mapper>

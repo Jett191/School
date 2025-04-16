@@ -1,0 +1,128 @@
+package com.ruoyi.xscj.kcxx.mapper;
+
+import java.util.List;
+
+import com.ruoyi.xscj.kcxx.domain.Js;
+import com.ruoyi.xscj.kcxx.domain.Kcxx;
+import com.ruoyi.xscj.kcxx.domain.KcxxFj;
+
+/**
+ * 课程信息Mapper接口
+ *
+ * @author huacai
+ * @date 2025-02-28
+ */
+public interface KcxxMapper
+{
+    /**
+     * 查询课程信息
+     *
+     * @param kcxxId 课程信息主键
+     * @return 课程信息
+     */
+    public Kcxx selectKcxxByKcxxId(String kcxxId);
+
+    /**
+     * 查询课程信息列表
+     *
+     * @param kcxx 课程信息
+     * @return 课程信息集合
+     */
+    public List<Kcxx> selectKcxxList(Kcxx kcxx);
+
+    /**
+     * 新增课程信息
+     *
+     * @param kcxx 课程信息
+     * @return 结果
+     */
+    public int insertKcxx(Kcxx kcxx);
+
+    /**
+     * 修改课程信息
+     *
+     * @param kcxx 课程信息
+     * @return 结果
+     */
+    public int updateKcxx(Kcxx kcxx);
+
+    /**
+     * 删除课程信息
+     *
+     * @param kcxxId 课程信息主键
+     * @return 结果
+     */
+    public int deleteKcxxByKcxxId(String kcxxId);
+
+    /**
+     * 批量删除课程信息
+     *
+     * @param kcxxIds 需要删除的数据主键集合
+     * @return 结果
+     */
+    public int deleteKcxxByKcxxIds(String[] kcxxIds);
+
+    /**
+     * 批量删除课程附件
+     *
+     * @param kcxxIds 需要删除的数据主键集合
+     * @return 结果
+     */
+    public int deleteKcxxFjByKcxxIds(String[] kcxxIds);
+
+    /**
+     * 批量新增课程附件
+     *
+     * @param kcxxFjList 课程附件列表
+     * @return 结果
+     */
+    public int batchKcxxFj(List<KcxxFj> kcxxFjList);
+
+
+    /**
+     * 通过课程信息主键删除课程附件信息
+     *
+     * @param kcxxId 课程信息ID
+     * @return 结果
+     */
+    public int deleteKcxxFjByKcxxId(String kcxxId);
+
+    /**
+     * 新增附件
+     * @param kcxxFj
+     * @return
+     */
+    int insertKcxxFjByKcxxId(KcxxFj kcxxFj);
+
+    /**
+     * 根据ID查询附件列表
+     * @param kcxxFj
+     * @return
+     */
+    List<KcxxFj> selectKcxxFjList(KcxxFj kcxxFj);
+
+    /**
+     * 删除课程附件
+     * @param fjs
+     * @return
+     */
+    int deleteKcxxFjByFjs(Integer[] fjs);
+
+    /**
+     * 不分页查询课程列表
+     * @return
+     */
+    List<Kcxx> selectKcList();
+
+    /**
+     * 不分页查询教师列表
+     * @return
+     */
+    List<Js> selectJsList();
+
+    /**
+     * 不分页查询学生列表
+     * @return
+     */
+    List<Js> selectXsList();
+}

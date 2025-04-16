@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xscj.cjlr.mapper.CjlrMapper">
+
+    <resultMap type="Cjlr" id="CjlrResult">
+        <result property="cjlrId"    column="cjlr_id"    />
+        <result property="xsName"    column="xs_name"    />
+        <result property="kcName"    column="kc_name"    />
+        <result property="kcCj"    column="kc_cj"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="userId"    column="user_id"    />
+        <result property="deptId"    column="dept_id"    />
+    </resultMap>
+
+    <sql id="selectCjlrVo">
+        select cjlr_id, xs_name, kc_name, kc_cj, create_by, create_time, update_by, update_time, user_id, dept_id from xscj_cjlr
+    </sql>
+
+    <select id="selectCjlrList" parameterType="Cjlr" resultMap="CjlrResult">
+        <include refid="selectCjlrVo"/>
+        <where>
+            <if test="xsName != null  and xsName != ''"> and xs_name like concat('%', #{xsName}, '%')</if>
+            <if test="kcName != null  and kcName != ''"> and kc_name like concat('%', #{kcName}, '%')</if>
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="deptId != null "> and dept_id = #{deptId}</if>
+        </where>
+    </select>
+
+    <select id="selectCjlrByCjlrId" parameterType="String" resultMap="CjlrResult">
+        <include refid="selectCjlrVo"/>
+        where cjlr_id = #{cjlrId}
+    </select>
+
+    <!--不分页查询成绩统计列表-->
+    <select id="selectCjTjList" resultType="com.ruoyi.xscj.cjlr.domain.CjTj">
+        SELECT
+            kc_name AS kcName,
+            AVG(kc_cj) AS pjf,
+            MAX(kc_cj) AS zgf,
+            MIN(kc_cj) AS zdf
+        FROM
+            xscj_cjlr
+        GROUP BY
+            kc_name
+        order by pjf desc
+    </select>
+
+    <!--学生成绩分析-->
+    <select id="selectXscjfx" parameterType="String" resultMap="CjlrResult">
+        SELECT xs_name,
+               kc_name,
+               kc_cj
+        FROM xscj_cjlr
+        WHERE xs_name = #{xsName}
+        order by kc_cj
+    </select>
+
+    <!--查询gpa-->
+    <select id="selectGpaList" resultType="com.ruoyi.xscj.cjlr.domain.Gpa">
+        SELECT
+            xs_name AS xsName,
+            AVG(kc_cj) AS gpa
+        FROM
+            xscj_cjlr
+        GROUP BY
+            xs_name
+    </select>
+
+    <!--查询班级成绩排名-->
+    <select id="selectBjCjList" resultType="com.ruoyi.xscj.cjlr.domain.BjCj">
+        SELECT jbxx.bj as bj,
+               AVG(x.kc_cj) AS pjf
+        FROM xscj_cjlr x
+                 left join  xscj_xsjbxx jbxx ON x.xs_name = jbxx.xm
+        GROUP BY jbxx.bj
+        order by pjf desc
+    </select>
+
+    <insert id="insertCjlr" parameterType="Cjlr">
+        insert into xscj_cjlr
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cjlrId != null">cjlr_id,</if>
+            <if test="xsName != null and xsName != ''">xs_name,</if>
+            <if test="kcName != null and kcName != ''">kc_name,</if>
+            <if test="kcCj != null">kc_cj,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="deptId != null">dept_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cjlrId != null">#{cjlrId},</if>
+            <if test="xsName != null and xsName != ''">#{xsName},</if>
+            <if test="kcName != null and kcName != ''">#{kcName},</if>
+            <if test="kcCj != null">#{kcCj},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="deptId != null">#{deptId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCjlr" parameterType="Cjlr">
+        update xscj_cjlr
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="xsName != null and xsName != ''">xs_name = #{xsName},</if>
+            <if test="kcName != null and kcName != ''">kc_name = #{kcName},</if>
+            <if test="kcCj != null">kc_cj = #{kcCj},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+        </trim>
+        where cjlr_id = #{cjlrId}
+    </update>
+
+    <delete id="deleteCjlrByCjlrId" parameterType="String">
+        delete from xscj_cjlr where cjlr_id = #{cjlrId}
+    </delete>
+
+    <delete id="deleteCjlrByCjlrIds" parameterType="String">
+        delete from xscj_cjlr where cjlr_id in
+        <foreach item="cjlrId" collection="array" open="(" separator="," close=")">
+            #{cjlrId}
+        </foreach>
+    </delete>
+</mapper>

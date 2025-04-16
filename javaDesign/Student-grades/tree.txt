@@ -1,0 +1,1373 @@
+.
+├── ./bin
+│   ├── ./bin/clean.bat
+│   ├── ./bin/package.bat
+│   └── ./bin/run.bat
+├── ./pom.xml
+├── ./ruoyi-activiti
+│   ├── ./ruoyi-activiti/pom.xml
+│   ├── ./ruoyi-activiti/src
+│   │   └── ./ruoyi-activiti/src/main
+│   │       ├── ./ruoyi-activiti/src/main/java
+│   │       │   └── ./ruoyi-activiti/src/main/java/com
+│   │       │       └── ./ruoyi-activiti/src/main/java/com/ruoyi
+│   │       │           ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/controller
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/controller/ProcessDefinitionController.java
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/controller/TaskController.java
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/controller/UserController.java
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/domain
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/domain/DefineProcessVo.java
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/domain/DefineVo.java
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/domain/RoleVo.java
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/domain/UserVo.java
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/exception
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/exception/CustomException.java
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/mapper
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/mapper/MyProcessMapper.java
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/mapper/MyTaskMapper.java
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/mapper/UserMapper.java
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/service
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/service/MyTaskService.java
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/service/impl
+│   │       │           │   │       └── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/service/impl/MyTaskServiceImpl.java
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/util
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/util/ActivitiUtil.java
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/util/CustomProcessDiagramCanvas.java
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/util/CustomProcessDiagramGenerator.java
+│   │       │           │   │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/util/ICustomProcessDiagramGenerator.java
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/util/ProcessImageManager.java
+│   │       │           │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/vo
+│   │       │           │       ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/vo/ActivitiVo.java
+│   │       │           │       ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/vo/ApplyVo.java
+│   │       │           │       ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/vo/HistoryVo.java
+│   │       │           │       ├── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/vo/MyTaskVo.java
+│   │       │           │       └── ./ruoyi-activiti/src/main/java/com/ruoyi/activiti/vo/ProcessHighlightEntity.java
+│   │       │           ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoHiComment
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoHiComment/domain
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoHiComment/domain/InfoHiComment.java
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoHiComment/mapper
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoHiComment/mapper/InfoHiCommentMapper.java
+│   │       │           │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoHiComment/service
+│   │       │           │       ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoHiComment/service/IInfoHiCommentService.java
+│   │       │           │       └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoHiComment/service/impl
+│   │       │           │           └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoHiComment/service/impl/InfoHiCommentServiceImpl.java
+│   │       │           ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia/controller
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia/controller/InfoQingJiaController.java
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia/domain
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia/domain/InfoQingJia.java
+│   │       │           │   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia/mapper
+│   │       │           │   │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia/mapper/InfoQingJiaMapper.java
+│   │       │           │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia/service
+│   │       │           │       ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia/service/IInfoQingJiaService.java
+│   │       │           │       └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia/service/impl
+│   │       │           │           └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoQingJia/service/impl/InfoQingJiaServiceImpl.java
+│   │       │           └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoRunTaskData
+│   │       │               ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoRunTaskData/domain
+│   │       │               │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoRunTaskData/domain/InfoRunTaskData.java
+│   │       │               ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoRunTaskData/mapper
+│   │       │               │   └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoRunTaskData/mapper/InfoRunTaskDataMapper.java
+│   │       │               └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoRunTaskData/service
+│   │       │                   ├── ./ruoyi-activiti/src/main/java/com/ruoyi/infoRunTaskData/service/IInfoRunTaskDataService.java
+│   │       │                   └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoRunTaskData/service/impl
+│   │       │                       └── ./ruoyi-activiti/src/main/java/com/ruoyi/infoRunTaskData/service/impl/InfoRunTaskDataServiceImpl.java
+│   │       └── ./ruoyi-activiti/src/main/resources
+│   │           └── ./ruoyi-activiti/src/main/resources/mapper
+│   │               ├── ./ruoyi-activiti/src/main/resources/mapper/InfoHiCommentMapper.xml
+│   │               ├── ./ruoyi-activiti/src/main/resources/mapper/InfoQingJiaMapper.xml
+│   │               ├── ./ruoyi-activiti/src/main/resources/mapper/InfoRunTaskDataMapper.xml
+│   │               ├── ./ruoyi-activiti/src/main/resources/mapper/MyTaskMapper.xml
+│   │               ├── ./ruoyi-activiti/src/main/resources/mapper/ProcessMapper.xml
+│   │               └── ./ruoyi-activiti/src/main/resources/mapper/UserMapper.xml
+│   └── ./ruoyi-activiti/target
+│       ├── ./ruoyi-activiti/target/classes
+│       │   ├── ./ruoyi-activiti/target/classes/com
+│       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi
+│       │   │       ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/controller
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/controller/ProcessDefinitionController.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/controller/TaskController.class
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/controller/UserController.class
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/domain
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/domain/DefineProcessVo.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/domain/DefineVo.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/domain/RoleVo.class
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/domain/UserVo.class
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/exception
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/exception/CustomException.class
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/mapper
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/mapper/MyProcessMapper.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/mapper/MyTaskMapper.class
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/mapper/UserMapper.class
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/service
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/service/MyTaskService.class
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/service/impl
+│       │   │       │   │       └── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/service/impl/MyTaskServiceImpl.class
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/ActivitiUtil.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramCanvas$SHAPE_TYPE.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramCanvas.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$1.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$10.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$11.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$12.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$13.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$14.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$15.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$16.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$17.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$18.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$19.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$2.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$20.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$21.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$22.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$3.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$4.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$5.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$6.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$7.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$8.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$9.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$ActivityDrawInstruction.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator$ArtifactDrawInstruction.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/CustomProcessDiagramGenerator.class
+│       │   │       │   │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/ICustomProcessDiagramGenerator.class
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/util/ProcessImageManager.class
+│       │   │       │   └── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/vo
+│       │   │       │       ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/vo/ActivitiVo.class
+│       │   │       │       ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/vo/ApplyVo.class
+│       │   │       │       ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/vo/HistoryVo.class
+│       │   │       │       ├── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/vo/MyTaskVo.class
+│       │   │       │       └── ./ruoyi-activiti/target/classes/com/ruoyi/activiti/vo/ProcessHighlightEntity.class
+│       │   │       ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoHiComment
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoHiComment/domain
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/infoHiComment/domain/InfoHiComment.class
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoHiComment/mapper
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/infoHiComment/mapper/InfoHiCommentMapper.class
+│       │   │       │   └── ./ruoyi-activiti/target/classes/com/ruoyi/infoHiComment/service
+│       │   │       │       ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoHiComment/service/IInfoHiCommentService.class
+│       │   │       │       └── ./ruoyi-activiti/target/classes/com/ruoyi/infoHiComment/service/impl
+│       │   │       │           └── ./ruoyi-activiti/target/classes/com/ruoyi/infoHiComment/service/impl/InfoHiCommentServiceImpl.class
+│       │   │       ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia/controller
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia/controller/InfoQingJiaController.class
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia/domain
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia/domain/InfoQingJia.class
+│       │   │       │   ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia/mapper
+│       │   │       │   │   └── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia/mapper/InfoQingJiaMapper.class
+│       │   │       │   └── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia/service
+│       │   │       │       ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia/service/IInfoQingJiaService.class
+│       │   │       │       └── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia/service/impl
+│       │   │       │           └── ./ruoyi-activiti/target/classes/com/ruoyi/infoQingJia/service/impl/InfoQingJiaServiceImpl.class
+│       │   │       └── ./ruoyi-activiti/target/classes/com/ruoyi/infoRunTaskData
+│       │   │           ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoRunTaskData/domain
+│       │   │           │   └── ./ruoyi-activiti/target/classes/com/ruoyi/infoRunTaskData/domain/InfoRunTaskData.class
+│       │   │           ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoRunTaskData/mapper
+│       │   │           │   └── ./ruoyi-activiti/target/classes/com/ruoyi/infoRunTaskData/mapper/InfoRunTaskDataMapper.class
+│       │   │           └── ./ruoyi-activiti/target/classes/com/ruoyi/infoRunTaskData/service
+│       │   │               ├── ./ruoyi-activiti/target/classes/com/ruoyi/infoRunTaskData/service/IInfoRunTaskDataService.class
+│       │   │               └── ./ruoyi-activiti/target/classes/com/ruoyi/infoRunTaskData/service/impl
+│       │   │                   └── ./ruoyi-activiti/target/classes/com/ruoyi/infoRunTaskData/service/impl/InfoRunTaskDataServiceImpl.class
+│       │   └── ./ruoyi-activiti/target/classes/mapper
+│       │       ├── ./ruoyi-activiti/target/classes/mapper/InfoHiCommentMapper.xml
+│       │       ├── ./ruoyi-activiti/target/classes/mapper/InfoQingJiaMapper.xml
+│       │       ├── ./ruoyi-activiti/target/classes/mapper/InfoRunTaskDataMapper.xml
+│       │       ├── ./ruoyi-activiti/target/classes/mapper/MyTaskMapper.xml
+│       │       ├── ./ruoyi-activiti/target/classes/mapper/ProcessMapper.xml
+│       │       └── ./ruoyi-activiti/target/classes/mapper/UserMapper.xml
+│       └── ./ruoyi-activiti/target/generated-sources
+│           └── ./ruoyi-activiti/target/generated-sources/annotations
+├── ./ruoyi-admin
+│   ├── ./ruoyi-admin/pom.xml
+│   ├── ./ruoyi-admin/src
+│   │   ├── ./ruoyi-admin/src/main
+│   │   │   ├── ./ruoyi-admin/src/main/java
+│   │   │   │   └── ./ruoyi-admin/src/main/java/com
+│   │   │   │       └── ./ruoyi-admin/src/main/java/com/ruoyi
+│   │   │   │           ├── ./ruoyi-admin/src/main/java/com/ruoyi/RuoYiApplication.java
+│   │   │   │           ├── ./ruoyi-admin/src/main/java/com/ruoyi/RuoYiServletInitializer.java
+│   │   │   │           └── ./ruoyi-admin/src/main/java/com/ruoyi/web
+│   │   │   │               ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller
+│   │   │   │               │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/common
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/common/CaptchaController.java
+│   │   │   │               │   │   └── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/common/CommonController.java
+│   │   │   │               │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/CacheController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/ServerController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysLogininforController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysOperlogController.java
+│   │   │   │               │   │   └── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysUserOnlineController.java
+│   │   │   │               │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysConfigController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysDeptController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysDictDataController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysDictTypeController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysIndexController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysLoginController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysMenuController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysNoticeController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysPostController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysProfileController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysRegisterController.java
+│   │   │   │               │   │   ├── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysRoleController.java
+│   │   │   │               │   │   └── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java
+│   │   │   │               │   └── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/tool
+│   │   │   │               │       └── ./ruoyi-admin/src/main/java/com/ruoyi/web/controller/tool/TestController.java
+│   │   │   │               └── ./ruoyi-admin/src/main/java/com/ruoyi/web/core
+│   │   │   │                   └── ./ruoyi-admin/src/main/java/com/ruoyi/web/core/config
+│   │   │   │                       └── ./ruoyi-admin/src/main/java/com/ruoyi/web/core/config/SwaggerConfig.java
+│   │   │   └── ./ruoyi-admin/src/main/resources
+│   │   │       ├── ./ruoyi-admin/src/main/resources/META-INF
+│   │   │       │   └── ./ruoyi-admin/src/main/resources/META-INF/spring-devtools.properties
+│   │   │       ├── ./ruoyi-admin/src/main/resources/application-druid.yml
+│   │   │       ├── ./ruoyi-admin/src/main/resources/application.yml
+│   │   │       ├── ./ruoyi-admin/src/main/resources/banner.txt
+│   │   │       ├── ./ruoyi-admin/src/main/resources/i18n
+│   │   │       │   ├── ./ruoyi-admin/src/main/resources/i18n/messages.properties
+│   │   │       │   ├── ./ruoyi-admin/src/main/resources/i18n/messages_en_US.properties
+│   │   │       │   └── ./ruoyi-admin/src/main/resources/i18n/messages_zh_CN.properties
+│   │   │       ├── ./ruoyi-admin/src/main/resources/logback.xml
+│   │   │       ├── ./ruoyi-admin/src/main/resources/mybatis
+│   │   │       │   └── ./ruoyi-admin/src/main/resources/mybatis/mybatis-config.xml
+│   │   │       └── ./ruoyi-admin/src/main/resources/static
+│   │   │           └── ./ruoyi-admin/src/main/resources/static/word
+│   │   │               ├── ./ruoyi-admin/src/main/resources/static/word/111.docx
+│   │   │               ├── ./ruoyi-admin/src/main/resources/static/word/fztz
+│   │   │               │   └── ./ruoyi-admin/src/main/resources/static/word/fztz/clxhtb.docx
+│   │   │               ├── ./ruoyi-admin/src/main/resources/static/word/htbg
+│   │   │               │   └── ./ruoyi-admin/src/main/resources/static/word/htbg/htbg.docx
+│   │   │               ├── ./ruoyi-admin/src/main/resources/static/word/htbz
+│   │   │               │   ├── ./ruoyi-admin/src/main/resources/static/word/htbz/htbz1.docx
+│   │   │               │   └── ./ruoyi-admin/src/main/resources/static/word/htbz/htbz2.docx
+│   │   │               ├── ./ruoyi-admin/src/main/resources/static/word/jdsq
+│   │   │               │   └── ./ruoyi-admin/src/main/resources/static/word/jdsq/jdsq.docx
+│   │   │               ├── ./ruoyi-admin/src/main/resources/static/word/lld.docx
+│   │   │               ├── ./ruoyi-admin/src/main/resources/static/word/proposal.docx
+│   │   │               ├── ./ruoyi-admin/src/main/resources/static/word/proposal1.docx
+│   │   │               └── ./ruoyi-admin/src/main/resources/static/word/proposal2.docx
+│   │   └── ./ruoyi-admin/src/test
+│   │       └── ./ruoyi-admin/src/test/java
+│   │           └── ./ruoyi-admin/src/test/java/com
+│   │               └── ./ruoyi-admin/src/test/java/com/ruoyi
+│   │                   └── ./ruoyi-admin/src/test/java/com/ruoyi/ProcessRunTest.java
+│   └── ./ruoyi-admin/target
+│       ├── ./ruoyi-admin/target/classes
+│       │   ├── ./ruoyi-admin/target/classes/META-INF
+│       │   │   └── ./ruoyi-admin/target/classes/META-INF/spring-devtools.properties
+│       │   ├── ./ruoyi-admin/target/classes/application-druid.yml
+│       │   ├── ./ruoyi-admin/target/classes/application.yml
+│       │   ├── ./ruoyi-admin/target/classes/banner.txt
+│       │   ├── ./ruoyi-admin/target/classes/com
+│       │   │   └── ./ruoyi-admin/target/classes/com/ruoyi
+│       │   │       ├── ./ruoyi-admin/target/classes/com/ruoyi/RuoYiApplication.class
+│       │   │       ├── ./ruoyi-admin/target/classes/com/ruoyi/RuoYiServletInitializer.class
+│       │   │       └── ./ruoyi-admin/target/classes/com/ruoyi/web
+│       │   │           ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller
+│       │   │           │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/common
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/common/CaptchaController.class
+│       │   │           │   │   └── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/common/CommonController.class
+│       │   │           │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/monitor
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/monitor/CacheController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/monitor/ServerController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/monitor/SysLogininforController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/monitor/SysOperlogController.class
+│       │   │           │   │   └── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/monitor/SysUserOnlineController.class
+│       │   │           │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysConfigController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysDeptController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysDictDataController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysDictTypeController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysIndexController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysLoginController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysMenuController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysNoticeController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysPostController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysProfileController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysRegisterController.class
+│       │   │           │   │   ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysRoleController.class
+│       │   │           │   │   └── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/system/SysUserController.class
+│       │   │           │   └── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/tool
+│       │   │           │       ├── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/tool/TestController.class
+│       │   │           │       └── ./ruoyi-admin/target/classes/com/ruoyi/web/controller/tool/UserEntity.class
+│       │   │           └── ./ruoyi-admin/target/classes/com/ruoyi/web/core
+│       │   │               └── ./ruoyi-admin/target/classes/com/ruoyi/web/core/config
+│       │   │                   └── ./ruoyi-admin/target/classes/com/ruoyi/web/core/config/SwaggerConfig.class
+│       │   ├── ./ruoyi-admin/target/classes/i18n
+│       │   │   ├── ./ruoyi-admin/target/classes/i18n/messages.properties
+│       │   │   ├── ./ruoyi-admin/target/classes/i18n/messages_en_US.properties
+│       │   │   └── ./ruoyi-admin/target/classes/i18n/messages_zh_CN.properties
+│       │   ├── ./ruoyi-admin/target/classes/logback.xml
+│       │   ├── ./ruoyi-admin/target/classes/mybatis
+│       │   │   └── ./ruoyi-admin/target/classes/mybatis/mybatis-config.xml
+│       │   └── ./ruoyi-admin/target/classes/static
+│       │       └── ./ruoyi-admin/target/classes/static/word
+│       │           ├── ./ruoyi-admin/target/classes/static/word/111.docx
+│       │           ├── ./ruoyi-admin/target/classes/static/word/fztz
+│       │           │   └── ./ruoyi-admin/target/classes/static/word/fztz/clxhtb.docx
+│       │           ├── ./ruoyi-admin/target/classes/static/word/htbg
+│       │           │   └── ./ruoyi-admin/target/classes/static/word/htbg/htbg.docx
+│       │           ├── ./ruoyi-admin/target/classes/static/word/htbz
+│       │           │   ├── ./ruoyi-admin/target/classes/static/word/htbz/htbz1.docx
+│       │           │   └── ./ruoyi-admin/target/classes/static/word/htbz/htbz2.docx
+│       │           ├── ./ruoyi-admin/target/classes/static/word/jdsq
+│       │           │   └── ./ruoyi-admin/target/classes/static/word/jdsq/jdsq.docx
+│       │           ├── ./ruoyi-admin/target/classes/static/word/lld.docx
+│       │           ├── ./ruoyi-admin/target/classes/static/word/proposal.docx
+│       │           ├── ./ruoyi-admin/target/classes/static/word/proposal1.docx
+│       │           └── ./ruoyi-admin/target/classes/static/word/proposal2.docx
+│       └── ./ruoyi-admin/target/generated-sources
+│           └── ./ruoyi-admin/target/generated-sources/annotations
+├── ./ruoyi-common
+│   ├── ./ruoyi-common/pom.xml
+│   ├── ./ruoyi-common/src
+│   │   └── ./ruoyi-common/src/main
+│   │       └── ./ruoyi-common/src/main/java
+│   │           └── ./ruoyi-common/src/main/java/com
+│   │               └── ./ruoyi-common/src/main/java/com/ruoyi
+│   │                   └── ./ruoyi-common/src/main/java/com/ruoyi/common
+│   │                       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/annotation
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/annotation/Anonymous.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/annotation/DataScope.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/annotation/DataSource.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/annotation/Excel.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/annotation/Excels.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/annotation/Log.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/annotation/RateLimiter.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/annotation/RepeatSubmit.java
+│   │                       │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/annotation/Sensitive.java
+│   │                       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/config
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/config/RuoYiConfig.java
+│   │                       │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/config/serializer
+│   │                       │       └── ./ruoyi-common/src/main/java/com/ruoyi/common/config/serializer/SensitiveJsonSerializer.java
+│   │                       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/constant
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/constant/ActivitiConstants.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/constant/CacheConstants.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/constant/Constants.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/constant/GenConstants.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/constant/HttpStatus.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/constant/ScheduleConstants.java
+│   │                       │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/constant/UserConstants.java
+│   │                       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/controller
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/core/controller/BaseController.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/AjaxResult.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/BaseEntity.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/R.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/TreeEntity.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/TreeSelect.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity
+│   │                       │   │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDept.java
+│   │                       │   │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictData.java
+│   │                       │   │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictType.java
+│   │                       │   │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysMenu.java
+│   │                       │   │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysRole.java
+│   │                       │   │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysUser.java
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/model
+│   │                       │   │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/model/LoginBody.java
+│   │                       │   │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/model/LoginUser.java
+│   │                       │   │       └── ./ruoyi-common/src/main/java/com/ruoyi/common/core/domain/model/RegisterBody.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/page
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/page/PageDomain.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/page/TableDataInfo.java
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/core/page/TableSupport.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/redis
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/core/redis/RedisCache.java
+│   │                       │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/core/text
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/text/CharsetKit.java
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/core/text/Convert.java
+│   │                       │       └── ./ruoyi-common/src/main/java/com/ruoyi/common/core/text/StrFormatter.java
+│   │                       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/echarts
+│   │                       │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/echarts/EChartsBt.java
+│   │                       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/enums
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/enums/BusinessStatus.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/enums/BusinessType.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/enums/DataSourceType.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/enums/DesensitizedType.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/enums/HttpMethod.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/enums/LimitType.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/enums/OperatorType.java
+│   │                       │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/enums/UserStatus.java
+│   │                       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/DemoModeException.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/GlobalException.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/ServiceException.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/UtilException.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/base
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/base/BaseException.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/file
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/file/FileException.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/file/FileNameLengthLimitExceededException.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/file/FileSizeLimitExceededException.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/file/FileUploadException.java
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/file/InvalidExtensionException.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/job
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/job/TaskException.java
+│   │                       │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/user
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/user/BlackListException.java
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/user/CaptchaException.java
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/user/CaptchaExpireException.java
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/user/UserException.java
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/user/UserNotExistsException.java
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/user/UserPasswordNotMatchException.java
+│   │                       │       └── ./ruoyi-common/src/main/java/com/ruoyi/common/exception/user/UserPasswordRetryLimitExceedException.java
+│   │                       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/filter
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/filter/PropertyPreExcludeFilter.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/filter/RepeatableFilter.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/filter/RepeatedlyRequestWrapper.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/filter/XssFilter.java
+│   │                       │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/filter/XssHttpServletRequestWrapper.java
+│   │                       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/Arith.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/DateUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/DesensitizedUtil.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/DictUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/ExceptionUtil.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/LogUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/MessageUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/PageUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/SecurityUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/ServletUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/StringUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/Threads.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/WordUtil.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/bean
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/bean/BeanUtils.java
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/bean/BeanValidators.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/file
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/file/FileTypeUtils.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/file/FileUploadUtils.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/file/FileUtils.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/file/ImageUtils.java
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/file/MimeTypeUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/html
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/html/EscapeUtil.java
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/html/HTMLFilter.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/http
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/http/HttpHelper.java
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/http/HttpUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/ip
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/ip/AddressUtils.java
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/ip/IpUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/poi
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/poi/ExcelHandlerAdapter.java
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/poi/ExcelUtil.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/reflect
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/reflect/ReflectUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/sign
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/sign/Base64.java
+│   │                       │   │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/sign/Md5Utils.java
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/sign/RsaUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/spring
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/spring/SpringUtils.java
+│   │                       │   ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/sql
+│   │                       │   │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/sql/SqlUtil.java
+│   │                       │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/uuid
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/uuid/IdUtils.java
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/uuid/Seq.java
+│   │                       │       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/uuid/SnowflakeIdUtils.java
+│   │                       │       └── ./ruoyi-common/src/main/java/com/ruoyi/common/utils/uuid/UUID.java
+│   │                       ├── ./ruoyi-common/src/main/java/com/ruoyi/common/word
+│   │                       │   └── ./ruoyi-common/src/main/java/com/ruoyi/common/word/WordOperation.java
+│   │                       └── ./ruoyi-common/src/main/java/com/ruoyi/common/xss
+│   │                           ├── ./ruoyi-common/src/main/java/com/ruoyi/common/xss/Xss.java
+│   │                           └── ./ruoyi-common/src/main/java/com/ruoyi/common/xss/XssValidator.java
+│   └── ./ruoyi-common/target
+│       ├── ./ruoyi-common/target/classes
+│       │   └── ./ruoyi-common/target/classes/com
+│       │       └── ./ruoyi-common/target/classes/com/ruoyi
+│       │           └── ./ruoyi-common/target/classes/com/ruoyi/common
+│       │               ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/Anonymous.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/DataScope.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/DataSource.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/Excel$ColumnType.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/Excel$Type.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/Excel.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/Excels.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/Log.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/RateLimiter.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/RepeatSubmit.class
+│       │               │   └── ./ruoyi-common/target/classes/com/ruoyi/common/annotation/Sensitive.class
+│       │               ├── ./ruoyi-common/target/classes/com/ruoyi/common/config
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/config/RuoYiConfig.class
+│       │               │   └── ./ruoyi-common/target/classes/com/ruoyi/common/config/serializer
+│       │               │       └── ./ruoyi-common/target/classes/com/ruoyi/common/config/serializer/SensitiveJsonSerializer.class
+│       │               ├── ./ruoyi-common/target/classes/com/ruoyi/common/constant
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/constant/ActivitiConstants.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/constant/CacheConstants.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/constant/Constants.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/constant/GenConstants.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/constant/HttpStatus.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/constant/ScheduleConstants$Status.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/constant/ScheduleConstants.class
+│       │               │   └── ./ruoyi-common/target/classes/com/ruoyi/common/constant/UserConstants.class
+│       │               ├── ./ruoyi-common/target/classes/com/ruoyi/common/core
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/controller
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/controller/BaseController$1.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/core/controller/BaseController.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/AjaxResult.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/BaseEntity.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/R.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/TreeEntity.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/TreeSelect.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/entity
+│       │               │   │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/entity/SysDept.class
+│       │               │   │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/entity/SysDictData.class
+│       │               │   │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/entity/SysDictType.class
+│       │               │   │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/entity/SysMenu.class
+│       │               │   │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/entity/SysRole.class
+│       │               │   │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/entity/SysUser.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/model
+│       │               │   │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/model/LoginBody.class
+│       │               │   │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/model/LoginUser.class
+│       │               │   │       └── ./ruoyi-common/target/classes/com/ruoyi/common/core/domain/model/RegisterBody.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/page
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/page/PageDomain.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/page/TableDataInfo.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/core/page/TableSupport.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/redis
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/core/redis/RedisCache.class
+│       │               │   └── ./ruoyi-common/target/classes/com/ruoyi/common/core/text
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/text/CharsetKit.class
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/core/text/Convert.class
+│       │               │       └── ./ruoyi-common/target/classes/com/ruoyi/common/core/text/StrFormatter.class
+│       │               ├── ./ruoyi-common/target/classes/com/ruoyi/common/echarts
+│       │               │   └── ./ruoyi-common/target/classes/com/ruoyi/common/echarts/EChartsBt.class
+│       │               ├── ./ruoyi-common/target/classes/com/ruoyi/common/enums
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/enums/BusinessStatus.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/enums/BusinessType.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/enums/DataSourceType.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/enums/DesensitizedType.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/enums/HttpMethod.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/enums/LimitType.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/enums/OperatorType.class
+│       │               │   └── ./ruoyi-common/target/classes/com/ruoyi/common/enums/UserStatus.class
+│       │               ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/DemoModeException.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/GlobalException.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/ServiceException.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/UtilException.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/base
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/exception/base/BaseException.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/file
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/file/FileException.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/file/FileNameLengthLimitExceededException.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/file/FileSizeLimitExceededException.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/file/FileUploadException.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/file/InvalidExtensionException$InvalidFlashExtensionException.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/file/InvalidExtensionException$InvalidImageExtensionException.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/file/InvalidExtensionException$InvalidMediaExtensionException.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/file/InvalidExtensionException$InvalidVideoExtensionException.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/exception/file/InvalidExtensionException.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/job
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/job/TaskException$Code.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/exception/job/TaskException.class
+│       │               │   └── ./ruoyi-common/target/classes/com/ruoyi/common/exception/user
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/user/BlackListException.class
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/user/CaptchaException.class
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/user/CaptchaExpireException.class
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/user/UserException.class
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/user/UserNotExistsException.class
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/exception/user/UserPasswordNotMatchException.class
+│       │               │       └── ./ruoyi-common/target/classes/com/ruoyi/common/exception/user/UserPasswordRetryLimitExceedException.class
+│       │               ├── ./ruoyi-common/target/classes/com/ruoyi/common/filter
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/filter/PropertyPreExcludeFilter.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/filter/RepeatableFilter.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/filter/RepeatedlyRequestWrapper$1.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/filter/RepeatedlyRequestWrapper.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/filter/XssFilter.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/filter/XssHttpServletRequestWrapper$1.class
+│       │               │   └── ./ruoyi-common/target/classes/com/ruoyi/common/filter/XssHttpServletRequestWrapper.class
+│       │               ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/Arith.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/DateUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/DesensitizedUtil.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/DictUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/ExceptionUtil.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/LogUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/MessageUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/PageUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/SecurityUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/ServletUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/StringUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/Threads.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/WordUtil.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/bean
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/bean/BeanUtils.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/bean/BeanValidators.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/file
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/file/FileTypeUtils.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/file/FileUploadUtils.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/file/FileUtils.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/file/ImageUtils.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/file/MimeTypeUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/html
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/html/EscapeUtil.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/html/HTMLFilter.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/http
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/http/HttpHelper.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/http/HttpUtils$1.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/http/HttpUtils$TrustAnyHostnameVerifier.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/http/HttpUtils$TrustAnyTrustManager.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/http/HttpUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/ip
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/ip/AddressUtils.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/ip/IpUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/poi
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/poi/ExcelHandlerAdapter.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/poi/ExcelUtil.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/reflect
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/reflect/ReflectUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/sign
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/sign/Base64.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/sign/Md5Utils.class
+│       │               │   │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/sign/RsaUtils$RsaKeyPair.class
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/sign/RsaUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/spring
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/spring/SpringUtils.class
+│       │               │   ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/sql
+│       │               │   │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/sql/SqlUtil.class
+│       │               │   └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/uuid
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/uuid/IdUtils.class
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/uuid/Seq.class
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/uuid/SnowflakeIdUtils.class
+│       │               │       ├── ./ruoyi-common/target/classes/com/ruoyi/common/utils/uuid/UUID$Holder.class
+│       │               │       └── ./ruoyi-common/target/classes/com/ruoyi/common/utils/uuid/UUID.class
+│       │               ├── ./ruoyi-common/target/classes/com/ruoyi/common/word
+│       │               │   └── ./ruoyi-common/target/classes/com/ruoyi/common/word/WordOperation.class
+│       │               └── ./ruoyi-common/target/classes/com/ruoyi/common/xss
+│       │                   ├── ./ruoyi-common/target/classes/com/ruoyi/common/xss/Xss.class
+│       │                   └── ./ruoyi-common/target/classes/com/ruoyi/common/xss/XssValidator.class
+│       └── ./ruoyi-common/target/generated-sources
+│           └── ./ruoyi-common/target/generated-sources/annotations
+├── ./ruoyi-framework
+│   ├── ./ruoyi-framework/pom.xml
+│   ├── ./ruoyi-framework/src
+│   │   └── ./ruoyi-framework/src/main
+│   │       └── ./ruoyi-framework/src/main/java
+│   │           └── ./ruoyi-framework/src/main/java/com
+│   │               └── ./ruoyi-framework/src/main/java/com/ruoyi
+│   │                   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework
+│   │                       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/DataScopeAspect.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/DataSourceAspect.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/LogAspect.java
+│   │                       │   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/RateLimiterAspect.java
+│   │                       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/ApplicationConfig.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/CaptchaConfig.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/DruidConfig.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/FastJson2JsonRedisSerializer.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/FilterConfig.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/KaptchaTextCreator.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/MyBatisConfig.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/RedisConfig.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/ResourcesConfig.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/SecurityConfig.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/ServerConfig.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/ThreadPoolConfig.java
+│   │                       │   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/properties
+│   │                       │       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/properties/DruidProperties.java
+│   │                       │       └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/config/properties/PermitAllUrlProperties.java
+│   │                       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/datasource
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/datasource/DynamicDataSource.java
+│   │                       │   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/datasource/DynamicDataSourceContextHolder.java
+│   │                       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/interceptor
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/interceptor/RepeatSubmitInterceptor.java
+│   │                       │   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/interceptor/impl
+│   │                       │       └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/interceptor/impl/SameUrlDataInterceptor.java
+│   │                       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/manager
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/manager/AsyncManager.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/manager/ShutdownManager.java
+│   │                       │   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/manager/factory
+│   │                       │       └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/manager/factory/AsyncFactory.java
+│   │                       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/security
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/security/context
+│   │                       │   │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/security/context/AuthenticationContextHolder.java
+│   │                       │   │   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/security/context/PermissionContextHolder.java
+│   │                       │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/security/filter
+│   │                       │   │   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/security/filter/JwtAuthenticationTokenFilter.java
+│   │                       │   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/security/handle
+│   │                       │       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/security/handle/AuthenticationEntryPointImpl.java
+│   │                       │       └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/security/handle/LogoutSuccessHandlerImpl.java
+│   │                       └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web
+│   │                           ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/domain
+│   │                           │   ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/domain/Server.java
+│   │                           │   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/domain/server
+│   │                           │       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/domain/server/Cpu.java
+│   │                           │       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/domain/server/Jvm.java
+│   │                           │       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/domain/server/Mem.java
+│   │                           │       ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/domain/server/Sys.java
+│   │                           │       └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/domain/server/SysFile.java
+│   │                           ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/exception
+│   │                           │   └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/exception/GlobalExceptionHandler.java
+│   │                           └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/service
+│   │                               ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/PermissionService.java
+│   │                               ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysLoginService.java
+│   │                               ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysPasswordService.java
+│   │                               ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysPermissionService.java
+│   │                               ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysRegisterService.java
+│   │                               ├── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/TokenService.java
+│   │                               └── ./ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/UserDetailsServiceImpl.java
+│   └── ./ruoyi-framework/target
+│       ├── ./ruoyi-framework/target/classes
+│       │   └── ./ruoyi-framework/target/classes/com
+│       │       └── ./ruoyi-framework/target/classes/com/ruoyi
+│       │           └── ./ruoyi-framework/target/classes/com/ruoyi/framework
+│       │               ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/aspectj
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/aspectj/DataScopeAspect.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/aspectj/DataSourceAspect.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/aspectj/LogAspect.class
+│       │               │   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/aspectj/RateLimiterAspect.class
+│       │               ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/ApplicationConfig.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/CaptchaConfig.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/DruidConfig$1.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/DruidConfig.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/FastJson2JsonRedisSerializer.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/FilterConfig.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/KaptchaTextCreator.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/MyBatisConfig.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/RedisConfig.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/ResourcesConfig.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/SecurityConfig.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/ServerConfig.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/ThreadPoolConfig$1.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/ThreadPoolConfig.class
+│       │               │   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/properties
+│       │               │       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/properties/DruidProperties.class
+│       │               │       └── ./ruoyi-framework/target/classes/com/ruoyi/framework/config/properties/PermitAllUrlProperties.class
+│       │               ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/datasource
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/datasource/DynamicDataSource.class
+│       │               │   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/datasource/DynamicDataSourceContextHolder.class
+│       │               ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/interceptor
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/interceptor/RepeatSubmitInterceptor.class
+│       │               │   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/interceptor/impl
+│       │               │       └── ./ruoyi-framework/target/classes/com/ruoyi/framework/interceptor/impl/SameUrlDataInterceptor.class
+│       │               ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/manager
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/manager/AsyncManager.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/manager/ShutdownManager.class
+│       │               │   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/manager/factory
+│       │               │       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/manager/factory/AsyncFactory$1.class
+│       │               │       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/manager/factory/AsyncFactory$2.class
+│       │               │       └── ./ruoyi-framework/target/classes/com/ruoyi/framework/manager/factory/AsyncFactory.class
+│       │               ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/security
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/security/context
+│       │               │   │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/security/context/AuthenticationContextHolder.class
+│       │               │   │   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/security/context/PermissionContextHolder.class
+│       │               │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/security/filter
+│       │               │   │   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/security/filter/JwtAuthenticationTokenFilter.class
+│       │               │   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/security/handle
+│       │               │       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/security/handle/AuthenticationEntryPointImpl.class
+│       │               │       └── ./ruoyi-framework/target/classes/com/ruoyi/framework/security/handle/LogoutSuccessHandlerImpl.class
+│       │               └── ./ruoyi-framework/target/classes/com/ruoyi/framework/web
+│       │                   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/domain
+│       │                   │   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/domain/Server.class
+│       │                   │   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/domain/server
+│       │                   │       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/domain/server/Cpu.class
+│       │                   │       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/domain/server/Jvm.class
+│       │                   │       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/domain/server/Mem.class
+│       │                   │       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/domain/server/Sys.class
+│       │                   │       └── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/domain/server/SysFile.class
+│       │                   ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/exception
+│       │                   │   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/exception/GlobalExceptionHandler.class
+│       │                   └── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/service
+│       │                       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/service/PermissionService.class
+│       │                       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/service/SysLoginService.class
+│       │                       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/service/SysPasswordService.class
+│       │                       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/service/SysPermissionService.class
+│       │                       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/service/SysRegisterService.class
+│       │                       ├── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/service/TokenService.class
+│       │                       └── ./ruoyi-framework/target/classes/com/ruoyi/framework/web/service/UserDetailsServiceImpl.class
+│       └── ./ruoyi-framework/target/generated-sources
+│           └── ./ruoyi-framework/target/generated-sources/annotations
+├── ./ruoyi-generator
+│   ├── ./ruoyi-generator/pom.xml
+│   ├── ./ruoyi-generator/src
+│   │   └── ./ruoyi-generator/src/main
+│   │       ├── ./ruoyi-generator/src/main/java
+│   │       │   └── ./ruoyi-generator/src/main/java/com
+│   │       │       └── ./ruoyi-generator/src/main/java/com/ruoyi
+│   │       │           └── ./ruoyi-generator/src/main/java/com/ruoyi/generator
+│   │       │               ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/config
+│   │       │               │   └── ./ruoyi-generator/src/main/java/com/ruoyi/generator/config/GenConfig.java
+│   │       │               ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/controller
+│   │       │               │   └── ./ruoyi-generator/src/main/java/com/ruoyi/generator/controller/GenController.java
+│   │       │               ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/domain
+│   │       │               │   ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/domain/GenTable.java
+│   │       │               │   └── ./ruoyi-generator/src/main/java/com/ruoyi/generator/domain/GenTableColumn.java
+│   │       │               ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/mapper
+│   │       │               │   ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/mapper/GenTableColumnMapper.java
+│   │       │               │   └── ./ruoyi-generator/src/main/java/com/ruoyi/generator/mapper/GenTableMapper.java
+│   │       │               ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/service
+│   │       │               │   ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/service/GenTableColumnServiceImpl.java
+│   │       │               │   ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/service/GenTableServiceImpl.java
+│   │       │               │   ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/service/IGenTableColumnService.java
+│   │       │               │   └── ./ruoyi-generator/src/main/java/com/ruoyi/generator/service/IGenTableService.java
+│   │       │               └── ./ruoyi-generator/src/main/java/com/ruoyi/generator/util
+│   │       │                   ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/util/GenUtils.java
+│   │       │                   ├── ./ruoyi-generator/src/main/java/com/ruoyi/generator/util/VelocityInitializer.java
+│   │       │                   └── ./ruoyi-generator/src/main/java/com/ruoyi/generator/util/VelocityUtils.java
+│   │       └── ./ruoyi-generator/src/main/resources
+│   │           ├── ./ruoyi-generator/src/main/resources/generator.yml
+│   │           ├── ./ruoyi-generator/src/main/resources/mapper
+│   │           │   └── ./ruoyi-generator/src/main/resources/mapper/generator
+│   │           │       ├── ./ruoyi-generator/src/main/resources/mapper/generator/GenTableColumnMapper.xml
+│   │           │       └── ./ruoyi-generator/src/main/resources/mapper/generator/GenTableMapper.xml
+│   │           └── ./ruoyi-generator/src/main/resources/vm
+│   │               ├── ./ruoyi-generator/src/main/resources/vm/java
+│   │               │   ├── ./ruoyi-generator/src/main/resources/vm/java/controller.java.vm
+│   │               │   ├── ./ruoyi-generator/src/main/resources/vm/java/domain.java.vm
+│   │               │   ├── ./ruoyi-generator/src/main/resources/vm/java/mapper.java.vm
+│   │               │   ├── ./ruoyi-generator/src/main/resources/vm/java/service.java.vm
+│   │               │   ├── ./ruoyi-generator/src/main/resources/vm/java/serviceImpl.java.vm
+│   │               │   └── ./ruoyi-generator/src/main/resources/vm/java/sub-domain.java.vm
+│   │               ├── ./ruoyi-generator/src/main/resources/vm/js
+│   │               │   └── ./ruoyi-generator/src/main/resources/vm/js/api.js.vm
+│   │               ├── ./ruoyi-generator/src/main/resources/vm/sql
+│   │               │   └── ./ruoyi-generator/src/main/resources/vm/sql/sql.vm
+│   │               ├── ./ruoyi-generator/src/main/resources/vm/vue
+│   │               │   ├── ./ruoyi-generator/src/main/resources/vm/vue/index-tree.vue.vm
+│   │               │   ├── ./ruoyi-generator/src/main/resources/vm/vue/index.vue.vm
+│   │               │   └── ./ruoyi-generator/src/main/resources/vm/vue/v3
+│   │               │       ├── ./ruoyi-generator/src/main/resources/vm/vue/v3/index-tree.vue.vm
+│   │               │       └── ./ruoyi-generator/src/main/resources/vm/vue/v3/index.vue.vm
+│   │               └── ./ruoyi-generator/src/main/resources/vm/xml
+│   │                   └── ./ruoyi-generator/src/main/resources/vm/xml/mapper.xml.vm
+│   └── ./ruoyi-generator/target
+│       ├── ./ruoyi-generator/target/classes
+│       │   ├── ./ruoyi-generator/target/classes/com
+│       │   │   └── ./ruoyi-generator/target/classes/com/ruoyi
+│       │   │       └── ./ruoyi-generator/target/classes/com/ruoyi/generator
+│       │   │           ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/config
+│       │   │           │   └── ./ruoyi-generator/target/classes/com/ruoyi/generator/config/GenConfig.class
+│       │   │           ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/controller
+│       │   │           │   └── ./ruoyi-generator/target/classes/com/ruoyi/generator/controller/GenController.class
+│       │   │           ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/domain
+│       │   │           │   ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/domain/GenTable.class
+│       │   │           │   └── ./ruoyi-generator/target/classes/com/ruoyi/generator/domain/GenTableColumn.class
+│       │   │           ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/mapper
+│       │   │           │   ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/mapper/GenTableColumnMapper.class
+│       │   │           │   └── ./ruoyi-generator/target/classes/com/ruoyi/generator/mapper/GenTableMapper.class
+│       │   │           ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/service
+│       │   │           │   ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/service/GenTableColumnServiceImpl.class
+│       │   │           │   ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/service/GenTableServiceImpl.class
+│       │   │           │   ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/service/IGenTableColumnService.class
+│       │   │           │   └── ./ruoyi-generator/target/classes/com/ruoyi/generator/service/IGenTableService.class
+│       │   │           └── ./ruoyi-generator/target/classes/com/ruoyi/generator/util
+│       │   │               ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/util/GenUtils.class
+│       │   │               ├── ./ruoyi-generator/target/classes/com/ruoyi/generator/util/VelocityInitializer.class
+│       │   │               └── ./ruoyi-generator/target/classes/com/ruoyi/generator/util/VelocityUtils.class
+│       │   ├── ./ruoyi-generator/target/classes/generator.yml
+│       │   ├── ./ruoyi-generator/target/classes/mapper
+│       │   │   └── ./ruoyi-generator/target/classes/mapper/generator
+│       │   │       ├── ./ruoyi-generator/target/classes/mapper/generator/GenTableColumnMapper.xml
+│       │   │       └── ./ruoyi-generator/target/classes/mapper/generator/GenTableMapper.xml
+│       │   └── ./ruoyi-generator/target/classes/vm
+│       │       ├── ./ruoyi-generator/target/classes/vm/java
+│       │       │   ├── ./ruoyi-generator/target/classes/vm/java/controller.java.vm
+│       │       │   ├── ./ruoyi-generator/target/classes/vm/java/domain.java.vm
+│       │       │   ├── ./ruoyi-generator/target/classes/vm/java/mapper.java.vm
+│       │       │   ├── ./ruoyi-generator/target/classes/vm/java/service.java.vm
+│       │       │   ├── ./ruoyi-generator/target/classes/vm/java/serviceImpl.java.vm
+│       │       │   └── ./ruoyi-generator/target/classes/vm/java/sub-domain.java.vm
+│       │       ├── ./ruoyi-generator/target/classes/vm/js
+│       │       │   └── ./ruoyi-generator/target/classes/vm/js/api.js.vm
+│       │       ├── ./ruoyi-generator/target/classes/vm/sql
+│       │       │   └── ./ruoyi-generator/target/classes/vm/sql/sql.vm
+│       │       ├── ./ruoyi-generator/target/classes/vm/vue
+│       │       │   ├── ./ruoyi-generator/target/classes/vm/vue/index-tree.vue.vm
+│       │       │   ├── ./ruoyi-generator/target/classes/vm/vue/index.vue.vm
+│       │       │   └── ./ruoyi-generator/target/classes/vm/vue/v3
+│       │       │       ├── ./ruoyi-generator/target/classes/vm/vue/v3/index-tree.vue.vm
+│       │       │       └── ./ruoyi-generator/target/classes/vm/vue/v3/index.vue.vm
+│       │       └── ./ruoyi-generator/target/classes/vm/xml
+│       │           └── ./ruoyi-generator/target/classes/vm/xml/mapper.xml.vm
+│       └── ./ruoyi-generator/target/generated-sources
+│           └── ./ruoyi-generator/target/generated-sources/annotations
+├── ./ruoyi-quartz
+│   ├── ./ruoyi-quartz/pom.xml
+│   ├── ./ruoyi-quartz/src
+│   │   └── ./ruoyi-quartz/src/main
+│   │       ├── ./ruoyi-quartz/src/main/java
+│   │       │   └── ./ruoyi-quartz/src/main/java/com
+│   │       │       └── ./ruoyi-quartz/src/main/java/com/ruoyi
+│   │       │           └── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz
+│   │       │               ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/config
+│   │       │               │   └── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/config/ScheduleConfig.java
+│   │       │               ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/controller
+│   │       │               │   ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/controller/SysJobController.java
+│   │       │               │   └── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/controller/SysJobLogController.java
+│   │       │               ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain
+│   │       │               │   ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJob.java
+│   │       │               │   └── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJobLog.java
+│   │       │               ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/mapper
+│   │       │               │   ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/mapper/SysJobLogMapper.java
+│   │       │               │   └── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/mapper/SysJobMapper.java
+│   │       │               ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/service
+│   │       │               │   ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/service/ISysJobLogService.java
+│   │       │               │   ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/service/ISysJobService.java
+│   │       │               │   └── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/service/impl
+│   │       │               │       ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/service/impl/SysJobLogServiceImpl.java
+│   │       │               │       └── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/service/impl/SysJobServiceImpl.java
+│   │       │               ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/task
+│   │       │               │   └── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/task/RyTask.java
+│   │       │               └── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/util
+│   │       │                   ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/util/AbstractQuartzJob.java
+│   │       │                   ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/util/CronUtils.java
+│   │       │                   ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/util/JobInvokeUtil.java
+│   │       │                   ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/util/QuartzDisallowConcurrentExecution.java
+│   │       │                   ├── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/util/QuartzJobExecution.java
+│   │       │                   └── ./ruoyi-quartz/src/main/java/com/ruoyi/quartz/util/ScheduleUtils.java
+│   │       └── ./ruoyi-quartz/src/main/resources
+│   │           └── ./ruoyi-quartz/src/main/resources/mapper
+│   │               └── ./ruoyi-quartz/src/main/resources/mapper/quartz
+│   │                   ├── ./ruoyi-quartz/src/main/resources/mapper/quartz/SysJobLogMapper.xml
+│   │                   └── ./ruoyi-quartz/src/main/resources/mapper/quartz/SysJobMapper.xml
+│   └── ./ruoyi-quartz/target
+│       ├── ./ruoyi-quartz/target/classes
+│       │   ├── ./ruoyi-quartz/target/classes/com
+│       │   │   └── ./ruoyi-quartz/target/classes/com/ruoyi
+│       │   │       └── ./ruoyi-quartz/target/classes/com/ruoyi/quartz
+│       │   │           ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/controller
+│       │   │           │   ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/controller/SysJobController.class
+│       │   │           │   └── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/controller/SysJobLogController.class
+│       │   │           ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/domain
+│       │   │           │   ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/domain/SysJob.class
+│       │   │           │   └── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/domain/SysJobLog.class
+│       │   │           ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/mapper
+│       │   │           │   ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/mapper/SysJobLogMapper.class
+│       │   │           │   └── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/mapper/SysJobMapper.class
+│       │   │           ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/service
+│       │   │           │   ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/service/ISysJobLogService.class
+│       │   │           │   ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/service/ISysJobService.class
+│       │   │           │   └── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/service/impl
+│       │   │           │       ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/service/impl/SysJobLogServiceImpl.class
+│       │   │           │       └── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/service/impl/SysJobServiceImpl.class
+│       │   │           ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/task
+│       │   │           │   └── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/task/RyTask.class
+│       │   │           └── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/util
+│       │   │               ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/util/AbstractQuartzJob.class
+│       │   │               ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/util/CronUtils.class
+│       │   │               ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/util/JobInvokeUtil.class
+│       │   │               ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/util/QuartzDisallowConcurrentExecution.class
+│       │   │               ├── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/util/QuartzJobExecution.class
+│       │   │               └── ./ruoyi-quartz/target/classes/com/ruoyi/quartz/util/ScheduleUtils.class
+│       │   └── ./ruoyi-quartz/target/classes/mapper
+│       │       └── ./ruoyi-quartz/target/classes/mapper/quartz
+│       │           ├── ./ruoyi-quartz/target/classes/mapper/quartz/SysJobLogMapper.xml
+│       │           └── ./ruoyi-quartz/target/classes/mapper/quartz/SysJobMapper.xml
+│       └── ./ruoyi-quartz/target/generated-sources
+│           └── ./ruoyi-quartz/target/generated-sources/annotations
+├── ./ruoyi-research-projects.iml
+├── ./ruoyi-system
+│   ├── ./ruoyi-system/pom.xml
+│   ├── ./ruoyi-system/src
+│   │   └── ./ruoyi-system/src/main
+│   │       ├── ./ruoyi-system/src/main/java
+│   │       │   └── ./ruoyi-system/src/main/java/com
+│   │       │       └── ./ruoyi-system/src/main/java/com/ruoyi
+│   │       │           ├── ./ruoyi-system/src/main/java/com/ruoyi/disk
+│   │       │           │   ├── ./ruoyi-system/src/main/java/com/ruoyi/disk/controller
+│   │       │           │   │   └── ./ruoyi-system/src/main/java/com/ruoyi/disk/controller/DiskFilesController.java
+│   │       │           │   ├── ./ruoyi-system/src/main/java/com/ruoyi/disk/domain
+│   │       │           │   │   └── ./ruoyi-system/src/main/java/com/ruoyi/disk/domain/DiskFiles.java
+│   │       │           │   ├── ./ruoyi-system/src/main/java/com/ruoyi/disk/mapper
+│   │       │           │   │   └── ./ruoyi-system/src/main/java/com/ruoyi/disk/mapper/DiskFilesMapper.java
+│   │       │           │   └── ./ruoyi-system/src/main/java/com/ruoyi/disk/service
+│   │       │           │       ├── ./ruoyi-system/src/main/java/com/ruoyi/disk/service/IDiskFilesService.java
+│   │       │           │       └── ./ruoyi-system/src/main/java/com/ruoyi/disk/service/impl
+│   │       │           │           └── ./ruoyi-system/src/main/java/com/ruoyi/disk/service/impl/DiskFilesServiceImpl.java
+│   │       │           └── ./ruoyi-system/src/main/java/com/ruoyi/system
+│   │       │               ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysCache.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysConfig.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysLogininfor.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysNotice.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysOperLog.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysPost.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysRoleDept.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysRoleMenu.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysUserOnline.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysUserPost.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/SysUserRole.java
+│   │       │               │   └── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/vo
+│   │       │               │       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/vo/MetaVo.java
+│   │       │               │       └── ./ruoyi-system/src/main/java/com/ruoyi/system/domain/vo/RouterVo.java
+│   │       │               ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysConfigMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysDeptMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysDictDataMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysDictTypeMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysLogininforMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysMenuMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysNoticeMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysOperLogMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysPostMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysRoleDeptMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysRoleMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysRoleMenuMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java
+│   │       │               │   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserPostMapper.java
+│   │       │               │   └── ./ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserRoleMapper.java
+│   │       │               └── ./ruoyi-system/src/main/java/com/ruoyi/system/service
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysConfigService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysDeptService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysDictDataService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysDictTypeService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysLogininforService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysMenuService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysNoticeService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysOperLogService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysPostService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysRoleService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserOnlineService.java
+│   │       │                   ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java
+│   │       │                   └── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysConfigServiceImpl.java
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysDeptServiceImpl.java
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysDictDataServiceImpl.java
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysDictTypeServiceImpl.java
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysLogininforServiceImpl.java
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysMenuServiceImpl.java
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysNoticeServiceImpl.java
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysOperLogServiceImpl.java
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysPostServiceImpl.java
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysRoleServiceImpl.java
+│   │       │                       ├── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserOnlineServiceImpl.java
+│   │       │                       └── ./ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java
+│   │       └── ./ruoyi-system/src/main/resources
+│   │           └── ./ruoyi-system/src/main/resources/mapper
+│   │               ├── ./ruoyi-system/src/main/resources/mapper/disk
+│   │               │   └── ./ruoyi-system/src/main/resources/mapper/disk/DiskFilesMapper.xml
+│   │               └── ./ruoyi-system/src/main/resources/mapper/system
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysConfigMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysDeptMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysDictDataMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysDictTypeMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysLogininforMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysMenuMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysNoticeMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysOperLogMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysPostMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysRoleDeptMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysRoleMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysRoleMenuMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml
+│   │                   ├── ./ruoyi-system/src/main/resources/mapper/system/SysUserPostMapper.xml
+│   │                   └── ./ruoyi-system/src/main/resources/mapper/system/SysUserRoleMapper.xml
+│   └── ./ruoyi-system/target
+│       ├── ./ruoyi-system/target/classes
+│       │   ├── ./ruoyi-system/target/classes/com
+│       │   │   └── ./ruoyi-system/target/classes/com/ruoyi
+│       │   │       ├── ./ruoyi-system/target/classes/com/ruoyi/disk
+│       │   │       │   ├── ./ruoyi-system/target/classes/com/ruoyi/disk/controller
+│       │   │       │   │   └── ./ruoyi-system/target/classes/com/ruoyi/disk/controller/DiskFilesController.class
+│       │   │       │   ├── ./ruoyi-system/target/classes/com/ruoyi/disk/domain
+│       │   │       │   │   └── ./ruoyi-system/target/classes/com/ruoyi/disk/domain/DiskFiles.class
+│       │   │       │   ├── ./ruoyi-system/target/classes/com/ruoyi/disk/mapper
+│       │   │       │   │   └── ./ruoyi-system/target/classes/com/ruoyi/disk/mapper/DiskFilesMapper.class
+│       │   │       │   └── ./ruoyi-system/target/classes/com/ruoyi/disk/service
+│       │   │       │       ├── ./ruoyi-system/target/classes/com/ruoyi/disk/service/IDiskFilesService.class
+│       │   │       │       └── ./ruoyi-system/target/classes/com/ruoyi/disk/service/impl
+│       │   │       │           └── ./ruoyi-system/target/classes/com/ruoyi/disk/service/impl/DiskFilesServiceImpl.class
+│       │   │       └── ./ruoyi-system/target/classes/com/ruoyi/system
+│       │   │           ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysCache.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysConfig.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysLogininfor.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysNotice.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysOperLog.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysPost.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysRoleDept.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysRoleMenu.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysUserOnline.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysUserPost.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/SysUserRole.class
+│       │   │           │   └── ./ruoyi-system/target/classes/com/ruoyi/system/domain/vo
+│       │   │           │       ├── ./ruoyi-system/target/classes/com/ruoyi/system/domain/vo/MetaVo.class
+│       │   │           │       └── ./ruoyi-system/target/classes/com/ruoyi/system/domain/vo/RouterVo.class
+│       │   │           ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysConfigMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysDeptMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysDictDataMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysDictTypeMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysLogininforMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysMenuMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysNoticeMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysOperLogMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysPostMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysRoleDeptMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysRoleMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysRoleMenuMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysUserMapper.class
+│       │   │           │   ├── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysUserPostMapper.class
+│       │   │           │   └── ./ruoyi-system/target/classes/com/ruoyi/system/mapper/SysUserRoleMapper.class
+│       │   │           └── ./ruoyi-system/target/classes/com/ruoyi/system/service
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysConfigService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysDeptService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysDictDataService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysDictTypeService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysLogininforService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysMenuService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysNoticeService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysOperLogService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysPostService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysRoleService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysUserOnlineService.class
+│       │   │               ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/ISysUserService.class
+│       │   │               └── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysConfigServiceImpl.class
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysDeptServiceImpl.class
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysDictDataServiceImpl.class
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysDictTypeServiceImpl.class
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysLogininforServiceImpl.class
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysMenuServiceImpl.class
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysNoticeServiceImpl.class
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysOperLogServiceImpl.class
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysPostServiceImpl.class
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysRoleServiceImpl.class
+│       │   │                   ├── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysUserOnlineServiceImpl.class
+│       │   │                   └── ./ruoyi-system/target/classes/com/ruoyi/system/service/impl/SysUserServiceImpl.class
+│       │   └── ./ruoyi-system/target/classes/mapper
+│       │       ├── ./ruoyi-system/target/classes/mapper/disk
+│       │       │   └── ./ruoyi-system/target/classes/mapper/disk/DiskFilesMapper.xml
+│       │       └── ./ruoyi-system/target/classes/mapper/system
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysConfigMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysDeptMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysDictDataMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysDictTypeMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysLogininforMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysMenuMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysNoticeMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysOperLogMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysPostMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysRoleDeptMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysRoleMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysRoleMenuMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysUserMapper.xml
+│       │           ├── ./ruoyi-system/target/classes/mapper/system/SysUserPostMapper.xml
+│       │           └── ./ruoyi-system/target/classes/mapper/system/SysUserRoleMapper.xml
+│       └── ./ruoyi-system/target/generated-sources
+│           └── ./ruoyi-system/target/generated-sources/annotations
+├── ./ruoyi-talent-platform.iml
+├── ./ruoyi-xscjxxgl
+│   ├── ./ruoyi-xscjxxgl/pom.xml
+│   ├── ./ruoyi-xscjxxgl/src
+│   │   └── ./ruoyi-xscjxxgl/src/main
+│   │       ├── ./ruoyi-xscjxxgl/src/main/java
+│   │       │   └── ./ruoyi-xscjxxgl/src/main/java/com
+│   │       │       └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi
+│   │       │           └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj
+│   │       │               ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/controller
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/controller/CjlrController.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/domain
+│   │       │               │   │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/domain/BjCj.java
+│   │       │               │   │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/domain/CjTj.java
+│   │       │               │   │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/domain/Cjlr.java
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/domain/Gpa.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/mapper
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/mapper/CjlrMapper.java
+│   │       │               │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/service
+│   │       │               │       ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/service/ICjlrService.java
+│   │       │               │       └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/service/impl
+│   │       │               │           └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjlr/service/impl/CjlrServiceImpl.java
+│   │       │               ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp/controller
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp/controller/CjxgspController.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp/domain
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp/domain/Cjxgsp.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp/mapper
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp/mapper/CjxgspMapper.java
+│   │       │               │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp/service
+│   │       │               │       ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp/service/ICjxgspService.java
+│   │       │               │       └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp/service/impl
+│   │       │               │           └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/cjxgsp/service/impl/CjxgspServiceImpl.java
+│   │       │               ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/controller
+│   │       │               │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/controller/XnController.java
+│   │       │               ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/domain
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/domain/Xn.java
+│   │       │               │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/domain/XnKc.java
+│   │       │               ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx/controller
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx/controller/XsjbxxController.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx/domain
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx/domain/Xsjbxx.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx/mapper
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx/mapper/XsjbxxMapper.java
+│   │       │               │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx/service
+│   │       │               │       ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx/service/IXsjbxxService.java
+│   │       │               │       └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx/service/impl
+│   │       │               │           └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/jbxx/service/impl/XsjbxxServiceImpl.java
+│   │       │               ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap/controller
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap/controller/KcapController.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap/domain
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap/domain/Kcap.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap/mapper
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap/mapper/KcapMapper.java
+│   │       │               │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap/service
+│   │       │               │       ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap/service/IKcapService.java
+│   │       │               │       └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap/service/impl
+│   │       │               │           └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcap/service/impl/KcapServiceImpl.java
+│   │       │               ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj/controller
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj/controller/KcpjController.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj/domain
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj/domain/Kcpj.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj/mapper
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj/mapper/KcpjMapper.java
+│   │       │               │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj/service
+│   │       │               │       ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj/service/IKcpjService.java
+│   │       │               │       └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj/service/impl
+│   │       │               │           └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcpj/service/impl/KcpjServiceImpl.java
+│   │       │               ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/controller
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/controller/KcxxController.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/domain
+│   │       │               │   │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/domain/Js.java
+│   │       │               │   │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/domain/Kcxx.java
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/domain/KcxxFj.java
+│   │       │               │   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/mapper
+│   │       │               │   │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/mapper/KcxxMapper.java
+│   │       │               │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/service
+│   │       │               │       ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/service/IKcxxService.java
+│   │       │               │       └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/service/impl
+│   │       │               │           └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/kcxx/service/impl/KcxxServiceImpl.java
+│   │       │               ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/mapper
+│   │       │               │   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/mapper/XnMapper.java
+│   │       │               └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/service
+│   │       │                   ├── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/service/IXnService.java
+│   │       │                   └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/service/impl
+│   │       │                       └── ./ruoyi-xscjxxgl/src/main/java/com/ruoyi/xscj/service/impl/XnServiceImpl.java
+│   │       └── ./ruoyi-xscjxxgl/src/main/resources
+│   │           └── ./ruoyi-xscjxxgl/src/main/resources/mapper
+│   │               └── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj
+│   │                   ├── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/XnMapper.xml
+│   │                   ├── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/cjlr
+│   │                   │   └── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/cjlr/CjlrMapper.xml
+│   │                   ├── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/cjxgsp
+│   │                   │   └── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/cjxgsp/CjxgspMapper.xml
+│   │                   ├── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/jbxx
+│   │                   │   └── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/jbxx/XsjbxxMapper.xml
+│   │                   ├── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/kcap
+│   │                   │   └── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/kcap/KcapMapper.xml
+│   │                   ├── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/kcpj
+│   │                   │   └── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/kcpj/KcpjMapper.xml
+│   │                   └── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/kcxx
+│   │                       └── ./ruoyi-xscjxxgl/src/main/resources/mapper/xscj/kcxx/KcxxMapper.xml
+│   └── ./ruoyi-xscjxxgl/target
+│       ├── ./ruoyi-xscjxxgl/target/classes
+│       │   ├── ./ruoyi-xscjxxgl/target/classes/com
+│       │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi
+│       │   │       └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj
+│       │   │           ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/controller
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/controller/CjlrController.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/domain
+│       │   │           │   │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/domain/BjCj.class
+│       │   │           │   │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/domain/CjTj.class
+│       │   │           │   │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/domain/Cjlr.class
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/domain/Gpa.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/mapper
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/mapper/CjlrMapper.class
+│       │   │           │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/service
+│       │   │           │       ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/service/ICjlrService.class
+│       │   │           │       └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/service/impl
+│       │   │           │           └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjlr/service/impl/CjlrServiceImpl.class
+│       │   │           ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp/controller
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp/controller/CjxgspController.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp/domain
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp/domain/Cjxgsp.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp/mapper
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp/mapper/CjxgspMapper.class
+│       │   │           │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp/service
+│       │   │           │       ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp/service/ICjxgspService.class
+│       │   │           │       └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp/service/impl
+│       │   │           │           └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/cjxgsp/service/impl/CjxgspServiceImpl.class
+│       │   │           ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/controller
+│       │   │           │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/controller/XnController.class
+│       │   │           ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/domain
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/domain/Xn.class
+│       │   │           │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/domain/XnKc.class
+│       │   │           ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx/controller
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx/controller/XsjbxxController.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx/domain
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx/domain/Xsjbxx.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx/mapper
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx/mapper/XsjbxxMapper.class
+│       │   │           │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx/service
+│       │   │           │       ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx/service/IXsjbxxService.class
+│       │   │           │       └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx/service/impl
+│       │   │           │           └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/jbxx/service/impl/XsjbxxServiceImpl.class
+│       │   │           ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap/controller
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap/controller/KcapController.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap/domain
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap/domain/Kcap.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap/mapper
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap/mapper/KcapMapper.class
+│       │   │           │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap/service
+│       │   │           │       ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap/service/IKcapService.class
+│       │   │           │       └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap/service/impl
+│       │   │           │           └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcap/service/impl/KcapServiceImpl.class
+│       │   │           ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj/controller
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj/controller/KcpjController.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj/domain
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj/domain/Kcpj.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj/mapper
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj/mapper/KcpjMapper.class
+│       │   │           │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj/service
+│       │   │           │       ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj/service/IKcpjService.class
+│       │   │           │       └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj/service/impl
+│       │   │           │           └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcpj/service/impl/KcpjServiceImpl.class
+│       │   │           ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/controller
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/controller/KcxxController.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/domain
+│       │   │           │   │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/domain/Js.class
+│       │   │           │   │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/domain/Kcxx.class
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/domain/KcxxFj.class
+│       │   │           │   ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/mapper
+│       │   │           │   │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/mapper/KcxxMapper.class
+│       │   │           │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/service
+│       │   │           │       ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/service/IKcxxService.class
+│       │   │           │       └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/service/impl
+│       │   │           │           └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/kcxx/service/impl/KcxxServiceImpl.class
+│       │   │           ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/mapper
+│       │   │           │   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/mapper/XnMapper.class
+│       │   │           └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/service
+│       │   │               ├── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/service/IXnService.class
+│       │   │               └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/service/impl
+│       │   │                   └── ./ruoyi-xscjxxgl/target/classes/com/ruoyi/xscj/service/impl/XnServiceImpl.class
+│       │   └── ./ruoyi-xscjxxgl/target/classes/mapper
+│       │       └── ./ruoyi-xscjxxgl/target/classes/mapper/xscj
+│       │           ├── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/XnMapper.xml
+│       │           ├── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/cjlr
+│       │           │   └── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/cjlr/CjlrMapper.xml
+│       │           ├── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/cjxgsp
+│       │           │   └── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/cjxgsp/CjxgspMapper.xml
+│       │           ├── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/jbxx
+│       │           │   └── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/jbxx/XsjbxxMapper.xml
+│       │           ├── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/kcap
+│       │           │   └── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/kcap/KcapMapper.xml
+│       │           ├── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/kcpj
+│       │           │   └── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/kcpj/KcpjMapper.xml
+│       │           └── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/kcxx
+│       │               └── ./ruoyi-xscjxxgl/target/classes/mapper/xscj/kcxx/KcxxMapper.xml
+│       └── ./ruoyi-xscjxxgl/target/generated-sources
+│           └── ./ruoyi-xscjxxgl/target/generated-sources/annotations
+├── ./ry.bat
+├── ./ry.sh
+├── ./tree.txt
+└── ./集成文档.txt
+
+483 directories, 888 files

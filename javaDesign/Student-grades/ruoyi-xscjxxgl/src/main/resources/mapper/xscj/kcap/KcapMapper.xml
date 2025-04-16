@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xscj.kcap.mapper.KcapMapper">
+
+    <resultMap type="Kcap" id="KcapResult">
+        <result property="kcapId"    column="kcap_id"    />
+        <result property="kcName"    column="kc_name"    />
+        <result property="kcQtime"    column="kc_qtime"    />
+        <result property="kcZtime"    column="kc_ztime"    />
+        <result property="kcDd"    column="kc_dd"    />
+        <result property="skJs"    column="sk_js"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="userId"    column="user_id"    />
+        <result property="deptId"    column="dept_id"    />
+    </resultMap>
+
+    <sql id="selectKcapVo">
+        select kcap_id, kc_name, kc_qtime, kc_ztime, kc_dd, sk_js, create_by, create_time, update_by, update_time, user_id, dept_id from xscj_kcap
+    </sql>
+
+    <select id="selectKcapList" parameterType="Kcap" resultMap="KcapResult">
+        <include refid="selectKcapVo"/>
+        <where>
+            <if test="kcName != null  and kcName != ''"> and kc_name like concat('%', #{kcName}, '%')</if>
+            <if test="kcDd != null  and kcDd != ''"> and kc_dd = #{kcDd}</if>
+            <if test="skJs != null  and skJs != ''"> and sk_js like concat('%', #{skJs}, '%')</if>
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="deptId != null "> and dept_id = #{deptId}</if>
+        </where>
+    </select>
+
+    <select id="selectKcapByKcapId" parameterType="String" resultMap="KcapResult">
+        <include refid="selectKcapVo"/>
+        where kcap_id = #{kcapId}
+    </select>
+
+    <!--不分页查询课程安排-->
+    <select id="selectKcApList" parameterType="Kcap" resultMap="KcapResult">
+        <include refid="selectKcapVo"/>
+    </select>
+
+    <insert id="insertKcap" parameterType="Kcap">
+        insert into xscj_kcap
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="kcapId != null">kcap_id,</if>
+            <if test="kcName != null and kcName != ''">kc_name,</if>
+            <if test="kcQtime != null">kc_qtime,</if>
+            <if test="kcZtime != null">kc_ztime,</if>
+            <if test="kcDd != null and kcDd != ''">kc_dd,</if>
+            <if test="skJs != null and skJs != ''">sk_js,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="deptId != null">dept_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="kcapId != null">#{kcapId},</if>
+            <if test="kcName != null and kcName != ''">#{kcName},</if>
+            <if test="kcQtime != null">#{kcQtime},</if>
+            <if test="kcZtime != null">#{kcZtime},</if>
+            <if test="kcDd != null and kcDd != ''">#{kcDd},</if>
+            <if test="skJs != null and skJs != ''">#{skJs},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="deptId != null">#{deptId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKcap" parameterType="Kcap">
+        update xscj_kcap
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="kcName != null and kcName != ''">kc_name = #{kcName},</if>
+            <if test="kcQtime != null">kc_qtime = #{kcQtime},</if>
+            <if test="kcZtime != null">kc_ztime = #{kcZtime},</if>
+            <if test="kcDd != null and kcDd != ''">kc_dd = #{kcDd},</if>
+            <if test="skJs != null and skJs != ''">sk_js = #{skJs},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+        </trim>
+        where kcap_id = #{kcapId}
+    </update>
+
+    <delete id="deleteKcapByKcapId" parameterType="String">
+        delete from xscj_kcap where kcap_id = #{kcapId}
+    </delete>
+
+    <delete id="deleteKcapByKcapIds" parameterType="String">
+        delete from xscj_kcap where kcap_id in
+        <foreach item="kcapId" collection="array" open="(" separator="," close=")">
+            #{kcapId}
+        </foreach>
+    </delete>
+</mapper>

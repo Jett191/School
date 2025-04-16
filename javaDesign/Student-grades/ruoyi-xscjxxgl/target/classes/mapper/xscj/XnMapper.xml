@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xscj.mapper.XnMapper">
+
+    <resultMap type="Xn" id="XnResult">
+        <result property="xnId"    column="xn_id"    />
+        <result property="ksNf"    column="ks_nf"    />
+        <result property="jsNf"    column="js_nf"    />
+        <result property="xq"    column="xq"    />
+    </resultMap>
+
+    <resultMap id="XnXnKcResult" type="Xn" extends="XnResult">
+        <collection property="xnKcList" notNullColumn="sub_kc_id" javaType="java.util.List" resultMap="XnKcResult" />
+    </resultMap>
+
+    <resultMap type="XnKc" id="XnKcResult">
+        <result property="kcId"    column="sub_kc_id"    />
+        <result property="xnId"    column="sub_xn_id"    />
+        <result property="kch"    column="sub_kch"    />
+        <result property="kcm"    column="sub_kcm"    />
+        <result property="kcXf"    column="sub_kc_xf"    />
+        <result property="rkLs"    column="sub_rk_ls"    />
+    </resultMap>
+
+    <sql id="selectXnVo">
+        select xn_id, ks_nf, js_nf, xq from xscj_xn
+    </sql>
+
+    <select id="selectXnList" parameterType="Xn" resultMap="XnResult">
+        <include refid="selectXnVo"/>
+        <where>
+            <if test="ksNf != null "> and ks_nf = #{ksNf}</if>
+            <if test="jsNf != null "> and js_nf = #{jsNf}</if>
+        </where>
+    </select>
+
+    <select id="selectXnByXnId" parameterType="String" resultMap="XnXnKcResult">
+    select a.xn_id, a.ks_nf, a.js_nf,a.xq,
+ b.kc_id as sub_kc_id, b.xn_id as sub_xn_id, b.kch as sub_kch, b.kcm as sub_kcm, b.kc_xf as sub_kc_xf, b.rk_ls as sub_rk_ls
+    from xscj_xn a
+    left join xscj_xn_kc b on b.xn_id = a.xn_id
+    where a.xn_id = #{xnId}
+    </select>
+
+    <insert id="insertXn" parameterType="Xn">
+        insert into xscj_xn
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="xnId != null">xn_id,</if>
+            <if test="ksNf != null">ks_nf,</if>
+            <if test="jsNf != null">js_nf,</if>
+            <if test="xq != null">xq,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="xnId != null">#{xnId},</if>
+            <if test="ksNf != null">#{ksNf},</if>
+            <if test="xq != null">#{xq},</if>
+         </trim>
+    </insert>
+
+    <update id="updateXn" parameterType="Xn">
+        update xscj_xn
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="ksNf != null">ks_nf = #{ksNf},</if>
+            <if test="jsNf != null">js_nf = #{jsNf},</if>
+            <if test="xq != null">js_nf = #{xq},</if>
+        </trim>
+        where xn_id = #{xnId}
+    </update>
+
+    <delete id="deleteXnByXnId" parameterType="String">
+        delete from xscj_xn where xn_id = #{xnId}
+    </delete>
+
+    <delete id="deleteXnByXnIds" parameterType="String">
+        delete from xscj_xn where xn_id in
+        <foreach item="xnId" collection="array" open="(" separator="," close=")">
+            #{xnId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteXnKcByXnIds" parameterType="String">
+        delete from xscj_xn_kc where xn_id in
+        <foreach item="xnId" collection="array" open="(" separator="," close=")">
+            #{xnId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteXnKcByXnId" parameterType="String">
+        delete from xscj_xn_kc where xn_id = #{xnId}
+    </delete>
+
+    <insert id="batchXnKc">
+        insert into xscj_xn_kc( kc_id, xn_id, kch, kcm, kc_xf, rk_ls) values
+        <foreach item="item" index="index" collection="list" separator=",">
+            ( #{item.kcId}, #{item.xnId}, #{item.kch}, #{item.kcm}, #{item.kcXf}, #{item.rkLs})
+        </foreach>
+    </insert>
+</mapper>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xscj.cjxgsp.mapper.CjxgspMapper">
+
+    <resultMap type="Cjxgsp" id="CjxgspResult">
+        <result property="cjxgspId"    column="cjxgsp_id"    />
+        <result property="xsName"    column="xs_name"    />
+        <result property="kcName"    column="kc_name"    />
+        <result property="xgqCj"    column="xgq_cj"    />
+        <result property="xghCj"    column="xgh_cj"    />
+        <result property="spZt"    column="sp_zt"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="userId"    column="user_id"    />
+        <result property="cjlrId"    column="cjlr_id"    />
+    </resultMap>
+
+    <sql id="selectCjxgspVo">
+        select cjxgsp_id, xs_name, kc_name, xgq_cj, xgh_cj, sp_zt, create_by, create_time, update_by, update_time, user_id, cjlr_id from xscj_cjxgsp
+    </sql>
+
+    <select id="selectCjxgspList" parameterType="Cjxgsp" resultMap="CjxgspResult">
+        <include refid="selectCjxgspVo"/>
+        <where>
+            <if test="xsName != null  and xsName != ''"> and xs_name like concat('%', #{xsName}, '%')</if>
+            <if test="kcName != null  and kcName != ''"> and kc_name like concat('%', #{kcName}, '%')</if>
+            <if test="spZt != null  and spZt != ''"> and sp_zt = #{spZt}</if>
+            <if test="userId != null "> and user_id = #{userId}</if>
+        </where>
+    </select>
+
+    <select id="selectCjxgspByCjxgspId" parameterType="Integer" resultMap="CjxgspResult">
+        <include refid="selectCjxgspVo"/>
+        where cjxgsp_id = #{cjxgspId}
+    </select>
+
+    <insert id="insertCjxgsp" parameterType="Cjxgsp" useGeneratedKeys="true" keyProperty="cjxgspId">
+        insert into xscj_cjxgsp
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="xsName != null and xsName != ''">xs_name,</if>
+            <if test="kcName != null and kcName != ''">kc_name,</if>
+            <if test="xgqCj != null">xgq_cj,</if>
+            <if test="xghCj != null">xgh_cj,</if>
+            <if test="spZt != null and spZt != ''">sp_zt,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="cjlrId != null">cjlr_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="xsName != null and xsName != ''">#{xsName},</if>
+            <if test="kcName != null and kcName != ''">#{kcName},</if>
+            <if test="xgqCj != null">#{xgqCj},</if>
+            <if test="xghCj != null">#{xghCj},</if>
+            <if test="spZt != null and spZt != ''">#{spZt},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="cjlrId != null">#{cjlrId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCjxgsp" parameterType="Cjxgsp">
+        update xscj_cjxgsp
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="xsName != null and xsName != ''">xs_name = #{xsName},</if>
+            <if test="kcName != null and kcName != ''">kc_name = #{kcName},</if>
+            <if test="xgqCj != null">xgq_cj = #{xgqCj},</if>
+            <if test="xghCj != null">xgh_cj = #{xghCj},</if>
+            <if test="spZt != null and spZt != ''">sp_zt = #{spZt},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="cjlrId != null">cjlr_id = #{cjlrId},</if>
+        </trim>
+        where cjxgsp_id = #{cjxgspId}
+    </update>
+
+    <delete id="deleteCjxgspByCjxgspId" parameterType="Integer">
+        delete from xscj_cjxgsp where cjxgsp_id = #{cjxgspId}
+    </delete>
+
+    <delete id="deleteCjxgspByCjxgspIds" parameterType="String">
+        delete from xscj_cjxgsp where cjxgsp_id in
+        <foreach item="cjxgspId" collection="array" open="(" separator="," close=")">
+            #{cjxgspId}
+        </foreach>
+    </delete>
+</mapper>

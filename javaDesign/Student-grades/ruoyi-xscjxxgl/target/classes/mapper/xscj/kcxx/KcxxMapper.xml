@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xscj.kcxx.mapper.KcxxMapper">
+
+    <resultMap type="Kcxx" id="KcxxResult">
+        <result property="kcxxId"    column="kcxx_id"    />
+        <result property="kcName"    column="kc_name"    />
+        <result property="kcDm"    column="kc_dm"    />
+        <result property="xf"    column="xf"    />
+        <result property="kcLx"    column="kc_lx"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="userId"    column="user_id"    />
+        <result property="deptId"    column="dept_id"    />
+    </resultMap>
+
+    <resultMap id="KcxxKcxxFjResult" type="Kcxx" extends="KcxxResult">
+        <collection property="kcxxFjList" notNullColumn="sub_fj" javaType="java.util.List" resultMap="KcxxFjResult" />
+    </resultMap>
+
+    <resultMap type="KcxxFj" id="KcxxFjResult">
+        <result property="fj"    column="sub_fj"    />
+        <result property="kcxxId"    column="sub_kcxx_id"    />
+        <result property="fileName"    column="sub_file_name"    />
+        <result property="fileSize"    column="sub_file_size"    />
+    </resultMap>
+
+    <sql id="selectKcxxVo">
+        select kcxx_id, kc_name, kc_dm, xf, kc_lx, create_by, create_time, update_by, update_time, user_id, dept_id from xscj_kcxx
+    </sql>
+
+    <select id="selectKcxxList" parameterType="Kcxx" resultMap="KcxxResult">
+        <include refid="selectKcxxVo"/>
+        <where>
+            <if test="kcName != null  and kcName != ''"> and kc_name like concat('%', #{kcName}, '%')</if>
+            <if test="kcDm != null  and kcDm != ''"> and kc_dm like concat('%', #{kcDm}, '%')</if>
+            <if test="xf != null "> and xf like concat('%', #{xf}, '%')</if>
+            <if test="kcLx != null  and kcLx != ''"> and kc_lx = #{kcLx}</if>
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="deptId != null "> and dept_id = #{deptId}</if>
+        </where>
+    </select>
+
+    <select id="selectKcxxByKcxxId" parameterType="String" resultMap="KcxxKcxxFjResult">
+    select a.kcxx_id, a.kc_name, a.kc_dm, a.xf, a.kc_lx, a.create_by, a.create_time, a.update_by, a.update_time, a.user_id, a.dept_id,
+ b.fj as sub_fj, b.kcxx_id as sub_kcxx_id, b.file_name as sub_file_name, b.file_size as sub_file_size
+    from xscj_kcxx a
+    left join xscj_kcxx_fj b on b.kcxx_id = a.kcxx_id
+    where a.kcxx_id = #{kcxxId}
+    </select>
+
+    <insert id="insertKcxx" parameterType="Kcxx">
+        insert into xscj_kcxx
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="kcxxId != null">kcxx_id,</if>
+            <if test="kcName != null and kcName != ''">kc_name,</if>
+            <if test="kcDm != null and kcDm != ''">kc_dm,</if>
+            <if test="xf != null">xf,</if>
+            <if test="kcLx != null and kcLx != ''">kc_lx,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="deptId != null">dept_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="kcxxId != null">#{kcxxId},</if>
+            <if test="kcName != null and kcName != ''">#{kcName},</if>
+            <if test="kcDm != null and kcDm != ''">#{kcDm},</if>
+            <if test="xf != null">#{xf},</if>
+            <if test="kcLx != null and kcLx != ''">#{kcLx},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="deptId != null">#{deptId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKcxx" parameterType="Kcxx">
+        update xscj_kcxx
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="kcName != null and kcName != ''">kc_name = #{kcName},</if>
+            <if test="kcDm != null and kcDm != ''">kc_dm = #{kcDm},</if>
+            <if test="xf != null">xf = #{xf},</if>
+            <if test="kcLx != null and kcLx != ''">kc_lx = #{kcLx},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+        </trim>
+        where kcxx_id = #{kcxxId}
+    </update>
+
+    <delete id="deleteKcxxByKcxxId" parameterType="String">
+        delete from xscj_kcxx where kcxx_id = #{kcxxId}
+    </delete>
+
+    <delete id="deleteKcxxByKcxxIds" parameterType="String">
+        delete from xscj_kcxx where kcxx_id in
+        <foreach item="kcxxId" collection="array" open="(" separator="," close=")">
+            #{kcxxId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteKcxxFjByKcxxIds" parameterType="String">
+        delete from xscj_kcxx_fj where kcxx_id in
+        <foreach item="kcxxId" collection="array" open="(" separator="," close=")">
+            #{kcxxId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteKcxxFjByKcxxId" parameterType="String">
+        delete from xscj_kcxx_fj where kcxx_id = #{kcxxId}
+    </delete>
+
+    <!--删除课程附件-->
+    <delete id="deleteKcxxFjByFjs" parameterType="String">
+        delete from xscj_kcxx_fj where fj in
+        <foreach item="fj" collection="array" open="(" separator="," close=")">
+            #{fj}
+        </foreach>
+    </delete>
+
+    <insert id="batchKcxxFj">
+        insert into xscj_kcxx_fj( fj, kcxx_id, file_name, file_size) values
+        <foreach item="item" index="index" collection="list" separator=",">
+            ( #{item.fj}, #{item.kcxxId}, #{item.fileName}, #{item.fileSize})
+        </foreach>
+    </insert>
+
+    <!--新增附件-->
+    <insert id="insertKcxxFjByKcxxId" parameterType="KcxxFj" useGeneratedKeys="true" keyProperty="fj">
+        insert into xscj_kcxx_fj
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="kcxxId != null and kcxxId != ''">kcxx_id,</if>
+            <if test="fileName != null">file_name,</if>
+            <if test="fileSize != null">file_size,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="kcxxId != null and kcxxId != ''">#{kcxxId},</if>
+            <if test="fileName != null">#{fileName},</if>
+            <if test="fileSize != null">#{fileSize},</if>
+        </trim>
+    </insert>
+
+    <resultMap type="KcxxFj" id="KcxxFjResultVo">
+        <result property="fj"    column="fj"    />
+        <result property="kcxxId"    column="kcxx_id"    />
+        <result property="fileName"    column="file_name"    />
+        <result property="fileSize"    column="file_size"    />
+    </resultMap>
+
+    <sql id="selectKcxxFjVo">
+        select fj, kcxx_id, file_name, file_size from xscj_kcxx_fj
+    </sql>
+
+    <!--根据ID查询附件列表-->
+    <select id="selectKcxxFjList" parameterType="KcxxFj" resultMap="KcxxFjResultVo">
+        select fj, kcxx_id, file_name, file_size from xscj_kcxx_fj
+        <where>
+            <if test="kcxxId != null  and kcxxId != ''"> and kcxx_id = #{kcxxId}</if>
+            <if test="fileName != null  and fileName != ''"> and file_name like concat('%', #{fileName}, '%')</if>
+            <if test="fileSize != null  and fileSize != ''"> and file_size = #{fileSize}</if>
+        </where>
+    </select>
+
+    <!--不分页查询课程列表-->
+    <select id="selectKcList" resultType="com.ruoyi.xscj.kcxx.domain.Kcxx">
+        select kcxx_id as kcxxId, kc_name as kcName from xscj_kcxx
+    </select>
+
+    <!--不分页查询教师列表-->
+    <select id="selectJsList" resultType="com.ruoyi.xscj.kcxx.domain.Js">
+        SELECT
+            u.user_id as userId,
+            u.user_name as userName
+        FROM
+            sys_user u
+                JOIN
+            sys_user_role ur ON u.user_id = ur.user_id
+                JOIN
+            sys_role r ON ur.role_id = r.role_id
+        WHERE
+            r.role_name = '教师' and u.del_flag = 0
+    </select>
+
+    <!--不分页查询学生列表-->
+    <select id="selectXsList" resultType="com.ruoyi.xscj.kcxx.domain.Js">
+        SELECT
+            u.user_id as userId,
+            u.nick_name as userName
+        FROM
+            sys_user u
+                JOIN
+            sys_user_role ur ON u.user_id = ur.user_id
+                JOIN
+            sys_role r ON ur.role_id = r.role_id
+        WHERE
+            r.role_name = '学生' and u.del_flag = 0
+    </select>
+
+</mapper>

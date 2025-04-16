@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xscj.jbxx.mapper.XsjbxxMapper">
+
+    <resultMap type="Xsjbxx" id="XsjbxxResult">
+        <result property="xsjbxxId"    column="xsjbxx_id"    />
+        <result property="xm"    column="xm"    />
+        <result property="xh"    column="xh"    />
+        <result property="xb"    column="xb"    />
+        <result property="bj"    column="bj"    />
+        <result property="yx"    column="yx"    />
+        <result property="xjZt"    column="xj_zt"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="userId"    column="user_id"    />
+        <result property="deptId"    column="dept_id"    />
+        <result property="ssUserId"    column="ss_user_id"    />
+    </resultMap>
+
+    <sql id="selectXsjbxxVo">
+        select xsjbxx_id, xm, xh, xb, bj, yx, xj_zt, create_by, create_time, update_by, update_time, user_id, dept_id, ss_user_id from xscj_xsjbxx
+    </sql>
+
+    <select id="selectXsjbxxList" parameterType="Xsjbxx" resultMap="XsjbxxResult">
+        <include refid="selectXsjbxxVo"/>
+        <where>
+            <if test="xm != null  and xm != ''"> and xm like concat('%', #{xm}, '%')</if>
+            <if test="xh != null  and xh != ''"> and xh like concat('%', #{xh}, '%')</if>
+            <if test="xb != null  and xb != ''"> and xb = #{xb}</if>
+            <if test="bj != null  and bj != ''"> and bj like concat('%', #{bj}, '%')</if>
+            <if test="yx != null  and yx != ''"> and yx like concat('%', #{yx}, '%')</if>
+            <if test="xjZt != null  and xjZt != ''"> and xj_zt = #{xjZt}</if>
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="deptId != null "> and dept_id = #{deptId}</if>
+            <if test="ssUserId != null "> and ss_user_id = #{ssUserId}</if>
+        </where>
+    </select>
+
+    <select id="selectXsjbxxByXsjbxxId" parameterType="String" resultMap="XsjbxxResult">
+        <include refid="selectXsjbxxVo"/>
+        where xsjbxx_id = #{xsjbxxId}
+    </select>
+
+    <insert id="insertXsjbxx" parameterType="Xsjbxx">
+        insert into xscj_xsjbxx
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="xsjbxxId != null">xsjbxx_id,</if>
+            <if test="xm != null and xm != ''">xm,</if>
+            <if test="xh != null and xh != ''">xh,</if>
+            <if test="xb != null and xb != ''">xb,</if>
+            <if test="bj != null and bj != ''">bj,</if>
+            <if test="yx != null and yx != ''">yx,</if>
+            <if test="xjZt != null and xjZt != ''">xj_zt,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="deptId != null">dept_id,</if>
+            <if test="ssUserId != null">ss_user_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="xsjbxxId != null">#{xsjbxxId},</if>
+            <if test="xm != null and xm != ''">#{xm},</if>
+            <if test="xh != null and xh != ''">#{xh},</if>
+            <if test="xb != null and xb != ''">#{xb},</if>
+            <if test="bj != null and bj != ''">#{bj},</if>
+            <if test="yx != null and yx != ''">#{yx},</if>
+            <if test="xjZt != null and xjZt != ''">#{xjZt},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="deptId != null">#{deptId},</if>
+            <if test="ssUserId != null">#{ssUserId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateXsjbxx" parameterType="Xsjbxx">
+        update xscj_xsjbxx
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="xm != null and xm != ''">xm = #{xm},</if>
+            <if test="xh != null and xh != ''">xh = #{xh},</if>
+            <if test="xb != null and xb != ''">xb = #{xb},</if>
+            <if test="bj != null and bj != ''">bj = #{bj},</if>
+            <if test="yx != null and yx != ''">yx = #{yx},</if>
+            <if test="xjZt != null and xjZt != ''">xj_zt = #{xjZt},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+            <if test="ssUserId != null">ss_user_id = #{ssUserId},</if>
+        </trim>
+        where xsjbxx_id = #{xsjbxxId}
+    </update>
+
+    <delete id="deleteXsjbxxByXsjbxxId" parameterType="String">
+        delete from xscj_xsjbxx where xsjbxx_id = #{xsjbxxId}
+    </delete>
+
+    <delete id="deleteXsjbxxByXsjbxxIds" parameterType="String">
+        delete from xscj_xsjbxx where xsjbxx_id in
+        <foreach item="xsjbxxId" collection="array" open="(" separator="," close=")">
+            #{xsjbxxId}
+        </foreach>
+    </delete>
+</mapper>
