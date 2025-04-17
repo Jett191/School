@@ -5,6 +5,7 @@ import com.homework2.entity.User;
 import com.homework2.input.UserLoginRequest;
 import com.homework2.input.UserRegisterRequest;
 import com.homework2.mapper.UserMapper;
+import com.homework2.output.UserLoginInfoResponse;
 import com.homework2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,12 +35,18 @@ public class UserImpl implements UserService {
   }
 
   @Override
-  public User login(UserLoginRequest userInfo) {
-
+  public UserLoginInfoResponse login(UserLoginRequest userInfo) {
 
     if (userMapper.findByEmail(userInfo.getEmail()) == null) return null;
 
+    User user = userMapper.findByEmail(userInfo.getEmail());
 
-    return null;
+    UserLoginInfoResponse userLoginInfoResponse= new UserLoginInfoResponse();
+    userLoginInfoResponse.setEmail(user.getEmail());
+    userLoginInfoResponse.setName(user.getName());
+    userLoginInfoResponse.setPath(user.getPath());
+    userLoginInfoResponse.setSize(user.getSize());
+
+    return  userLoginInfoResponse;
   }
 }

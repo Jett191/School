@@ -3,6 +3,7 @@ package com.homework2.controller;
 import com.homework2.entity.User;
 import com.homework2.input.UserLoginRequest;
 import com.homework2.input.UserRegisterRequest;
+import com.homework2.output.UserLoginInfoResponse;
 import com.homework2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +42,7 @@ public class UserController {
 
   @PostMapping("/login")
   public String login(UserLoginRequest userInfo, Model model) {
-    User user = userService.login(userInfo);
+    UserLoginInfoResponse user = userService.login(userInfo);
     if (user == null) {
       model.addAttribute("error", "用户名或密码错误");
       return "login";
