@@ -26,10 +26,7 @@ public class UserImpl implements UserService {
     user.setEmail(userInfo.getEmail());
     user.setName(userInfo.getName());
     user.setPassword(userInfo.getPassword());
-    user.setSize(500.00);
-
-    // Todo
-    user.setPath("");
+    user.setSize(100.00);
 
     return userMapper.insert(user) > 0;
   }

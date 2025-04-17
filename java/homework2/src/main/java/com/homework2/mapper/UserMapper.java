@@ -4,7 +4,9 @@ import com.homework2.entity.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface UserMapper {
@@ -21,6 +23,9 @@ public interface UserMapper {
   @Select("SELECT user_id AS userId, name, password, email, path, size, deleted " +
       "FROM `user` WHERE user_id = #{userId} AND deleted = 0")
   User findById(Integer userId);
+
+  @Update("UPDATE `user` SET path = #{path} WHERE user_id = #{userId}")
+  int initPath(@Param("userId") Integer userId, @Param("path") String path);
 
 
 
