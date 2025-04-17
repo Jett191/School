@@ -76,17 +76,19 @@
 
 
     <!--Sevlet&JSP-->
+
     <dependency>
-      <groupId>jakarta.servlet</groupId>
-      <artifactId>jakarta.servlet-api</artifactId>
-      <version>6.1.0</version>
+      <groupId>org.glassfish.web</groupId>
+      <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+      <version>3.0.1</version>
     </dependency>
 
     <dependency>
-      <groupId>jstl</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
+      <groupId>jakarta.servlet.jsp.jstl</groupId>
+      <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+      <version>3.0.2</version>
     </dependency>
+
 
     <!--日志-->
     <dependency>
@@ -145,6 +147,8 @@
       <artifactId>commons-lang3</artifactId>
       <version>3.17.0</version>
     </dependency>
+
+
 
   </dependencies>
 
